@@ -1,4 +1,5 @@
 <x-auth-layout>
+
 <div class="card card-bordered">
     <div class="card-inner card-inner-lg">
         <div class="nk-block-head">
@@ -10,18 +11,21 @@
             </div>
         </div>
         <form method="POST" action="{{ route('register') }}">
+        @csrf
             <div class="form-group">
                 <label class="form-label" for="name">Name</label>
                 <div class="form-control-wrap">
-                    <input type="text" class="form-control form-control-lg" id="name" required placeholder="Enter your name">
+                    <input type="text" name="name" class="form-control form-control-lg" id="name" required placeholder="Enter your name">
                 </div>
             </div>
+            <x-input-error :messages="$errors->get('name')" class="mt-2" />
             <div class="form-group">
                 <label class="form-label" for="email">Email or Username</label>
                 <div class="form-control-wrap">
-                    <input type="text" class="form-control form-control-lg" id="email" required placeholder="Enter your username">
+                    <input type="text" name="email" class="form-control form-control-lg" id="email" required placeholder="Enter your username">
                 </div>
             </div>
+            <x-input-error :messages="$errors->get('email')" class="mt-2" />
             <div class="form-group">
                 <label class="form-label" for="password">Password</label>
                 <div class="form-control-wrap">
@@ -29,9 +33,21 @@
                         <em class="passcode-icon icon-show icon ni ni-eye"></em>
                         <em class="passcode-icon icon-hide icon ni ni-eye-off"></em>
                     </a>
-                    <input type="password" class="form-control form-control-lg" id="password" placeholder="Enter your password">
+                    <input type="password" name="password" class="form-control form-control-lg" id="password" placeholder="Enter your password">
                 </div>
             </div>
+            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+            <div class="form-group">
+                <label class="form-label" for="password_confirmation">Confirm Password</label>
+                <div class="form-control-wrap">
+                    <a href="#" class="form-icon form-icon-right passcode-switch lg" data-target="password">
+                        <em class="passcode-icon icon-show icon ni ni-eye"></em>
+                        <em class="passcode-icon icon-hide icon ni ni-eye-off"></em>
+                    </a>
+                    <input type="password" name="password_confirmation" class="form-control form-control-lg" id="password_confirmation" placeholder="Confirm your password">
+                </div>
+            </div>
+            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
             <div class="form-group">
                 <div class="custom-control custom-control-xs custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="checkbox">

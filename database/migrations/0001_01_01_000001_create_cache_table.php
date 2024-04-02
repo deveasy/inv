@@ -15,7 +15,7 @@ return new class extends Migration
             $table->engine = 'InnoDB';
             $table->charset = 'utf8mb4';
             $table->collation = 'utf8mb4_0900_ai_ci';
-            $table->mediumText('key')->primary();
+            $table->string('key')->primary();
             $table->mediumText('value');
             $table->integer('expiration');
         });

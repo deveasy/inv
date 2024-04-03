@@ -28,13 +28,13 @@
                         </a>
                         <ul class="nk-menu-sub">
                             <li class="nk-menu-item">
-                                <a href="html/hotel/bookings.html" class="nk-menu-link"><span class="nk-menu-text">All Sales</span></a>
+                                <a href="{{ route('sales') }}" class="nk-menu-link"><span class="nk-menu-text">All Sales</span></a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href="html/hotel/booking-add.html" class="nk-menu-link"><span class="nk-menu-text">New Sale</span></a>
+                                <a href="{{ route('sales') }}" class="nk-menu-link"><span class="nk-menu-text">New Sale</span></a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href="html/hotel/booking-edit.html" class="nk-menu-link"><span class="nk-menu-text">Returns</span></a>
+                                <a href="{{ route('sales') }}" class="nk-menu-link"><span class="nk-menu-text">Returns</span></a>
                             </li>
                         </ul>
                     </li><!-- .nk-menu-item -->
@@ -45,10 +45,10 @@
                         </a>
                         <ul class="nk-menu-sub">
                             <li class="nk-menu-item">
-                                <a href="html/hotel/room-list.html" class="nk-menu-link"><span class="nk-menu-text">All Purchases</span></a>
+                                <a href="{{ route('purchases') }}" class="nk-menu-link"><span class="nk-menu-text">All Purchases</span></a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href="html/hotel/room-type.html" class="nk-menu-link"><span class="nk-menu-text">New Purchase</span></a>
+                                <a href="{{ route('purchases') }}" class="nk-menu-link"><span class="nk-menu-text">New Purchase</span></a>
                             </li>
                         </ul>
                     </li><!-- .nk-menu-item -->
@@ -59,30 +59,30 @@
                         </a>
                         <ul class="nk-menu-sub">
                             <li class="nk-menu-item">
-                                <a href="html/hotel/report-stocks.html" class="nk-menu-link"><span class="nk-menu-text">All Suppliers</span></a>
+                                <a href="{{ route('suppliers') }}" class="nk-menu-link"><span class="nk-menu-text">All Suppliers</span></a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href="html/hotel/report-expenses.html" class="nk-menu-link"><span class="nk-menu-text">Expenses</span></a>
+                                <a href="{{ route('suppliers') }}" class="nk-menu-link"><span class="nk-menu-text">Expenses</span></a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href="html/hotel/report-booking.html" class="nk-menu-link"><span class="nk-menu-text">Booking</span></a>
+                                <a href="{{ route('suppliers') }}" class="nk-menu-link"><span class="nk-menu-text">Booking</span></a>
                             </li>
                         </ul>
                     </li><!-- .nk-menu-item -->
                     <li class="nk-menu-item has-sub">
-                        <a href="html/hotel/customers.html" class="nk-menu-link nk-menu-toggle">
+                        <a href="#" class="nk-menu-link nk-menu-toggle">
                             <span class="nk-menu-icon"><em class="icon ni ni-users-fill"></em></span>
                             <span class="nk-menu-text">Customers</span>
                         </a>
                         <ul class="nk-menu-sub">
                             <li class="nk-menu-item">
-                                <a href="html/hotel/payment-methods.html" class="nk-menu-link"><span class="nk-menu-text">All Customers</span></a>
+                                <a href="{{ route('customers') }}" class="nk-menu-link"><span class="nk-menu-text">All Customers</span></a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href="html/hotel/invoice-list.html" class="nk-menu-link"><span class="nk-menu-text">Invocie List</span></a>
+                                <a href="{{ route('customers') }}" class="nk-menu-link"><span class="nk-menu-text">Invocie List</span></a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href="html/hotel/invoice-details.html" class="nk-menu-link"><span class="nk-menu-text">Invocie Details</span></a>
+                                <a href="{{ route('customers') }}" class="nk-menu-link"><span class="nk-menu-text">Invocie Details</span></a>
                             </li>
                         </ul>
                     </li><!-- .nk-menu-item -->
@@ -93,13 +93,13 @@
                         </a>
                         <ul class="nk-menu-sub">
                             <li class="nk-menu-item">
-                                <a href="html/hotel/payment-methods.html" class="nk-menu-link"><span class="nk-menu-text">Products</span></a>
+                                <a href="{{ route('inventory') }}" class="nk-menu-link"><span class="nk-menu-text">Products</span></a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href="html/hotel/invoice-list.html" class="nk-menu-link"><span class="nk-menu-text">Categories</span></a>
+                                <a href="{{ route('inventory') }}" class="nk-menu-link"><span class="nk-menu-text">Categories</span></a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href="html/hotel/invoice-details.html" class="nk-menu-link"><span class="nk-menu-text">History</span></a>
+                                <a href="{{ route('inventory') }}" class="nk-menu-link"><span class="nk-menu-text">History</span></a>
                             </li>
                         </ul>
                     </li><!-- .nk-menu-item -->
@@ -110,18 +110,18 @@
                         </a>
                         <ul class="nk-menu-sub">
                             <li class="nk-menu-item">
-                                <a href="html/hotel/payment-methods.html" class="nk-menu-link"><span class="nk-menu-text">Products</span></a>
+                                <a href="{{ route('reports') }}" class="nk-menu-link"><span class="nk-menu-text">Products</span></a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href="html/hotel/invoice-list.html" class="nk-menu-link"><span class="nk-menu-text">Categories</span></a>
+                                <a href="{{ route('reports') }}" class="nk-menu-link"><span class="nk-menu-text">Categories</span></a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href="html/hotel/invoice-details.html" class="nk-menu-link"><span class="nk-menu-text">Invocie Details</span></a>
+                                <a href="{{ route('reports') }}" class="nk-menu-link"><span class="nk-menu-text">Invocie Details</span></a>
                             </li>
                         </ul>
                     </li><!-- .nk-menu-item -->
                     <li class="nk-menu-item">
-                        <a href="html/hotel/settings.html" class="nk-menu-link">
+                        <a href="{{ route('dashboard') }}" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-setting-alt-fill"></em></span>
                             <span class="nk-menu-text">Settings</span>
                         </a>
@@ -130,13 +130,13 @@
                         <h6 class="overline-title text-primary-alt">Return to</h6>
                     </li><!-- .nk-menu-item -->
                     <li class="nk-menu-item">
-                        <a href="html/index.html" class="nk-menu-link">
+                        <a href="{{ route('dashboard') }}" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-chat-circle-fill"></em></span>
                             <span class="nk-menu-text">Support</span>
                         </a>
                     </li><!-- .nk-menu-item -->
                     <li class="nk-menu-item">
-                        <a href="html/components.html" class="nk-menu-link">
+                        <a href="{{ route('dashboard') }}" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-setting-alt-fill"></em></span>
                             <span class="nk-menu-text">Settings</span>
                         </a>

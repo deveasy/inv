@@ -28,13 +28,13 @@
                         </a>
                         <ul class="nk-menu-sub">
                             <li class="nk-menu-item">
-                                <a href="{{ route('sales') }}" class="nk-menu-link"><span class="nk-menu-text">All Sales</span></a>
+                                <a href="{{ route('sales.index') }}" class="nk-menu-link"><span class="nk-menu-text">All Sales</span></a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href="{{ route('sales') }}" class="nk-menu-link"><span class="nk-menu-text">New Sale</span></a>
+                                <a href="{{ route('sales.index') }}" class="nk-menu-link"><span class="nk-menu-text">New Sale</span></a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href="{{ route('sales') }}" class="nk-menu-link"><span class="nk-menu-text">Returns</span></a>
+                                <a href="{{ route('sales.index') }}" class="nk-menu-link"><span class="nk-menu-text">Returns</span></a>
                             </li>
                         </ul>
                     </li><!-- .nk-menu-item -->
@@ -45,10 +45,10 @@
                         </a>
                         <ul class="nk-menu-sub">
                             <li class="nk-menu-item">
-                                <a href="{{ route('purchases') }}" class="nk-menu-link"><span class="nk-menu-text">All Purchases</span></a>
+                                <a href="{{ route('purchases.index') }}" class="nk-menu-link"><span class="nk-menu-text">All Purchases</span></a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href="{{ route('purchases') }}" class="nk-menu-link"><span class="nk-menu-text">New Purchase</span></a>
+                                <a href="{{ route('purchases.index') }}" class="nk-menu-link"><span class="nk-menu-text">New Purchase</span></a>
                             </li>
                         </ul>
                     </li><!-- .nk-menu-item -->
@@ -59,13 +59,13 @@
                         </a>
                         <ul class="nk-menu-sub">
                             <li class="nk-menu-item">
-                                <a href="{{ route('suppliers') }}" class="nk-menu-link"><span class="nk-menu-text">All Suppliers</span></a>
+                                <a href="{{ route('suppliers.index') }}" class="nk-menu-link"><span class="nk-menu-text">All Suppliers</span></a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href="{{ route('suppliers') }}" class="nk-menu-link"><span class="nk-menu-text">Expenses</span></a>
+                                <a href="{{ route('suppliers.index') }}" class="nk-menu-link"><span class="nk-menu-text">Expenses</span></a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href="{{ route('suppliers') }}" class="nk-menu-link"><span class="nk-menu-text">Booking</span></a>
+                                <a href="{{ route('suppliers.index') }}" class="nk-menu-link"><span class="nk-menu-text">Booking</span></a>
                             </li>
                         </ul>
                     </li><!-- .nk-menu-item -->
@@ -76,13 +76,13 @@
                         </a>
                         <ul class="nk-menu-sub">
                             <li class="nk-menu-item">
-                                <a href="{{ route('customers') }}" class="nk-menu-link"><span class="nk-menu-text">All Customers</span></a>
+                                <a href="{{ route('customers.index') }}" class="nk-menu-link"><span class="nk-menu-text">All Customers</span></a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href="{{ route('customers') }}" class="nk-menu-link"><span class="nk-menu-text">Invocie List</span></a>
+                                <a href="{{ route('customers.index') }}" class="nk-menu-link"><span class="nk-menu-text">Invocie List</span></a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href="{{ route('customers') }}" class="nk-menu-link"><span class="nk-menu-text">Invocie Details</span></a>
+                                <a href="{{ route('customers.index') }}" class="nk-menu-link"><span class="nk-menu-text">Invocie Details</span></a>
                             </li>
                         </ul>
                     </li><!-- .nk-menu-item -->
@@ -93,13 +93,13 @@
                         </a>
                         <ul class="nk-menu-sub">
                             <li class="nk-menu-item">
-                                <a href="{{ route('inventory') }}" class="nk-menu-link"><span class="nk-menu-text">Products</span></a>
+                                <a href="{{ route('inventory.index') }}" class="nk-menu-link"><span class="nk-menu-text">Products</span></a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href="{{ route('inventory') }}" class="nk-menu-link"><span class="nk-menu-text">Categories</span></a>
+                                <a href="{{ route('inventory.index') }}" class="nk-menu-link"><span class="nk-menu-text">Categories</span></a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href="{{ route('inventory') }}" class="nk-menu-link"><span class="nk-menu-text">History</span></a>
+                                <a href="{{ route('inventory.index') }}" class="nk-menu-link"><span class="nk-menu-text">History</span></a>
                             </li>
                         </ul>
                     </li><!-- .nk-menu-item -->
@@ -110,33 +110,33 @@
                         </a>
                         <ul class="nk-menu-sub">
                             <li class="nk-menu-item">
-                                <a href="{{ route('reports') }}" class="nk-menu-link"><span class="nk-menu-text">Products</span></a>
+                                <a href="{{ route('reports.index') }}" class="nk-menu-link"><span class="nk-menu-text">Products</span></a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href="{{ route('reports') }}" class="nk-menu-link"><span class="nk-menu-text">Categories</span></a>
+                                <a href="{{ route('reports.index') }}" class="nk-menu-link"><span class="nk-menu-text">Categories</span></a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href="{{ route('reports') }}" class="nk-menu-link"><span class="nk-menu-text">Invocie Details</span></a>
+                                <a href="{{ route('reports.index') }}" class="nk-menu-link"><span class="nk-menu-text">Invocie Details</span></a>
                             </li>
                         </ul>
                     </li><!-- .nk-menu-item -->
                     <li class="nk-menu-item">
-                        <a href="{{ route('dashboard') }}" class="nk-menu-link">
+                        <a href="{{ route('admin.settings') }}" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-setting-alt-fill"></em></span>
                             <span class="nk-menu-text">Settings</span>
                         </a>
                     </li><!-- .nk-menu-item -->
                     <li class="nk-menu-heading">
-                        <h6 class="overline-title text-primary-alt">Return to</h6>
+                        <h6 class="overline-title text-primary-alt">ADMINISTRATION</h6>
                     </li><!-- .nk-menu-item -->
                     <li class="nk-menu-item">
-                        <a href="{{ route('dashboard') }}" class="nk-menu-link">
+                        <a href="{{ route('admin.support') }}" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-chat-circle-fill"></em></span>
                             <span class="nk-menu-text">Support</span>
                         </a>
                     </li><!-- .nk-menu-item -->
                     <li class="nk-menu-item">
-                        <a href="{{ route('dashboard') }}" class="nk-menu-link">
+                        <a href="{{ route('admin.settings') }}" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-setting-alt-fill"></em></span>
                             <span class="nk-menu-text">Settings</span>
                         </a>

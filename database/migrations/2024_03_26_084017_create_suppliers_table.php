@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('supplier_address');
             $table->string('supplier_phone');
             $table->string('supplier_email');
-            $table->timestamps('date_created');
+            $table->timestamp('date_created');
         });
     }
 

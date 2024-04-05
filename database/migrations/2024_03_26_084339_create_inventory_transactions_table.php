@@ -3,6 +3,9 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Products;
+use App\Models\Sales;
+use App\Models\Purchases;
 
 return new class extends Migration
 {
@@ -17,7 +20,7 @@ return new class extends Migration
             $table->collation = 'utf8mb4_0900_ai_ci';
             $table->id();
             $table->enum('transaction_type', ['Sale', 'Purchase', 'Sale Return', 'Purchase Return', 'Transfer']);
-            $table->timestamps('transaction_date');
+            $table->timestamp('transaction_date');
             $table->foreignIdFor(Products::class);
             $table->integer('quantity');
             $table->decimal('transaction_price', total: 8, places: 2);

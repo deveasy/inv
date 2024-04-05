@@ -3,6 +3,9 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Suppliers;
+use App\Models\Purchases;
+use App\Models\Products;
 
 return new class extends Migration
 {
@@ -17,7 +20,7 @@ return new class extends Migration
             $table->collation = 'utf8mb4_0900_ai_ci';
             $table->id();
             $table->foreignIdFor(Suppliers::class);
-            $table->timestamp('order_date');
+            $table->timestamp('purchase_date');
             $table->enum('status', ['Pending', 'Processing', 'Shipped', 'Completed']);
             $table->decimal('amount', total: 8, places: 2);
         });

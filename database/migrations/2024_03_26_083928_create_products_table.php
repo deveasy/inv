@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Categories;
 
 return new class extends Migration
 {
@@ -19,7 +20,7 @@ return new class extends Migration
             $table->string('product_name');
             $table->text('product_description');
             $table->foreignIdFor(Categories::class);
-            $table->timestamps('date_created');
+            $table->timestamp('date_created');
         });
     }
 

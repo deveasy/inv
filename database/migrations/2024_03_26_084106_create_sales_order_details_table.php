@@ -11,9 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sales_order_details', function (Blueprint $table) {
+        Schema::create('sales_details', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_0900_ai_ci';
             $table->id();
-            $table->timestamps();
+            $table->foreignIdFor(Sales::class);
+            $table->foreignIdFor(Products::class);
+            $table->integer('quantity');
+            $table->decimal('unit_price', total: 8, places: 2);
+            $table->decimal('total_price', total:8, places: 2);
         });
     }
 
@@ -22,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sales_order_details');
+        Schema::dropIfExists('sales_details');
     }
 };

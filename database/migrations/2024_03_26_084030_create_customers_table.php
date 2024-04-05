@@ -17,9 +17,10 @@ return new class extends Migration
             $table->collation = 'utf8mb4_0900_ai_ci';
             $table->id();
             $table->string('customer_name');
-            $table->string('customer_address');
-            $table->string('customer_phone');
-            $table->string('customer_email');
+            $table->string('contact_person')->nullable();
+            $table->string('customer_address')->nullable();
+            $table->string('customer_phone')->nullable();
+            $table->string('customer_email')->nullable();
             $table->timestamp('date_created');
         });
     }

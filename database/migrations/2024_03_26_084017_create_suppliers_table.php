@@ -17,9 +17,10 @@ return new class extends Migration
             $table->collation = 'utf8mb4_0900_ai_ci';
             $table->id();
             $table->string('supplier_name');
-            $table->string('supplier_address');
-            $table->string('supplier_phone');
-            $table->string('supplier_email');
+            $table->string('contact_person')->nullable();
+            $table->string('supplier_address')->nullable();
+            $table->string('supplier_phone')->nullable();
+            $table->string('supplier_email')->nullable();
             $table->timestamp('date_created');
         });
     }

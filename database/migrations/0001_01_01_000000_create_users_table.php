@@ -17,7 +17,7 @@ return new class extends Migration
             $table->collation = 'utf8mb4_0900_ai_ci';
             $table->id();
             $table->string('name');
-            $table->string('username');
+            $table->string('username')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

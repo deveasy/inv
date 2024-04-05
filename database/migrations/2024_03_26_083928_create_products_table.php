@@ -18,7 +18,7 @@ return new class extends Migration
             $table->collation = 'utf8mb4_0900_ai_ci';
             $table->id();
             $table->string('product_name');
-            $table->text('product_description');
+            $table->text('product_description')->nullable();
             $table->foreignIdFor(Categories::class);
             $table->timestamp('date_created');
         });

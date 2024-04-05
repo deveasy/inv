@@ -17,7 +17,7 @@ return new class extends Migration
             $table->collation = 'utf8mb4_0900_ai_ci';
             $table->id();
             $table->string('category_name');
-            $table->text('category_description');
+            $table->text('category_description')->nullable();
         });
     }
 

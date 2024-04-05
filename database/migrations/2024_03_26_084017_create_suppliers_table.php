@@ -12,8 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('suppliers', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_0900_ai_ci';
             $table->id();
-            $table->timestamps();
+            $table->string('supplier_name');
+            $table->string('supplier_address');
+            $table->string('supplier_phone');
+            $table->string('supplier_email');
+            $table->timestamps('date_created');
         });
     }
 

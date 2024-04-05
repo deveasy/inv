@@ -11,15 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('batch_numbers', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->charset = 'utf8mb4';
             $table->collation = 'utf8mb4_0900_ai_ci';
             $table->id();
-            $table->string('product_name');
+            $table->foreignIdFor(Products::class);
+            $table->foreignIdFor(Suppliers::class);
+            $table->string('batch_number');
             $table->text('product_description');
-            $table->foreignIdFor(Categories::class);
-            $table->timestamps('date_created');
+            $table->date('expiration_date');
         });
     }
 
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('batch_numbers');
     }
 };

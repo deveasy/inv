@@ -12,8 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('categories', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_0900_ai_ci';
             $table->id();
-            $table->timestamps();
+            $table->string('category_name');
+            $table->text('category_description');
         });
     }
 

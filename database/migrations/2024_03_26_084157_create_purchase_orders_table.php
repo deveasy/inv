@@ -12,8 +12,26 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('purchases', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_0900_ai_ci';
             $table->id();
-            $table->timestamps();
+            $table->foreignIdFor(Suppliers::class);
+            $table->timestamp('order_date');
+            $table->enum('status', ['Pending', 'Processing', 'Shipped', 'Completed']);
+            $table->decimal('amount', total: 8, places: 2);
+        });
+
+        Schema::create('purchase_details', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_0900_ai_ci';
+            $table->id();
+            $table->foreignIdFor(Purchases::class);
+            $table->foreignIdFor(Products::class);
+            $table->integer('quantity');
+            $table->decimal('unit_price', total: 8, places: 2);
+            $table->decimal('total_price', total:8, places: 2);
         });
     }
 
@@ -22,6 +40,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('purchases');
+        Schema::dropIfExists('purchase_details');
     }
 };

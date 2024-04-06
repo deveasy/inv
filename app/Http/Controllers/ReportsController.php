@@ -8,7 +8,6 @@ class ReportsController extends Controller
 {
     public function index()
     {
-        $sales = Products::all();
         return view('sales.index', compact('sales'));
     }
 
@@ -19,7 +18,6 @@ class ReportsController extends Controller
 
     public function store(Request $request)
     {
-        Products::create($request->all());
         return redirect()->route('sales.index');
     }
 
@@ -30,7 +28,6 @@ class ReportsController extends Controller
 
     public function update(Request $request, Product $product)
     {
-        $product->update($request->all());
         return redirect()->route('sales.index');
     }
 

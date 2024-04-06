@@ -31,10 +31,10 @@
                                 <a href="{{ route('sales.index') }}" class="nk-menu-link"><span class="nk-menu-text">All Sales</span></a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href="{{ route('sales.index') }}" class="nk-menu-link"><span class="nk-menu-text">New Sale</span></a>
+                                <a href="{{ route('sales.create') }}" class="nk-menu-link"><span class="nk-menu-text">New Sale</span></a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href="{{ route('sales.index') }}" class="nk-menu-link"><span class="nk-menu-text">Returns</span></a>
+                                <a href="{{ route('sales.returns') }}" class="nk-menu-link"><span class="nk-menu-text">Returns</span></a>
                             </li>
                         </ul>
                     </li><!-- .nk-menu-item -->
@@ -48,7 +48,7 @@
                                 <a href="{{ route('purchases.index') }}" class="nk-menu-link"><span class="nk-menu-text">All Purchases</span></a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href="{{ route('purchases.index') }}" class="nk-menu-link"><span class="nk-menu-text">New Purchase</span></a>
+                                <a href="{{ route('purchases.create') }}" class="nk-menu-link"><span class="nk-menu-text">New Purchase</span></a>
                             </li>
                         </ul>
                     </li><!-- .nk-menu-item -->
@@ -62,7 +62,7 @@
                                 <a href="{{ route('suppliers.index') }}" class="nk-menu-link"><span class="nk-menu-text">All Suppliers</span></a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href="{{ route('suppliers.index') }}" class="nk-menu-link"><span class="nk-menu-text">Expenses</span></a>
+                                <a href="{{ route('suppliers.create') }}" class="nk-menu-link"><span class="nk-menu-text">Expenses</span></a>
                             </li>
                             <li class="nk-menu-item">
                                 <a href="{{ route('suppliers.index') }}" class="nk-menu-link"><span class="nk-menu-text">Booking</span></a>

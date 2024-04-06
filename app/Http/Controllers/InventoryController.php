@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Inventory;
 use Illuminate\Http\Request;
 
 class InventoryController extends Controller
 {
     public function index()
     {
-        $products = Products::all();
-        return view('products.index', compact('products'));
+        return view('products.index');
     }
 
     public function create()

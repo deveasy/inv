@@ -33,7 +33,7 @@ Route::middleware('auth')->group(function () {
 
     Route::controller(SalesController::class)->group(function () {
         Route::get('/sales', 'index')->name('sales.index');
-        Route::get('/sales/create', 'create')->name('sales.create');
+        Route::get('/sales/new', 'create')->name('sales.create');
         Route::post('/sales', 'store')->name('sales.store');
         Route::get('/sales/{sale}/edit', 'edit')->name('sales.edit');
         Route::put('/sales/{sale}', 'update')->name('sales.update');
@@ -43,7 +43,7 @@ Route::middleware('auth')->group(function () {
     
     Route::controller(ProductsController::class)->group(function() {
         Route::get('/products', 'index')->name('products.index');
-        Route::get('/products/create', 'create')->name('products.create');
+        Route::get('/products/new', 'create')->name('products.create');
         Route::post('/products', 'store')->name('products.store');
         Route::get('/products/{product}/edit', 'edit')->name('products.edit');
         Route::put('/products/{product}', 'update')->name('products.update');
@@ -52,7 +52,7 @@ Route::middleware('auth')->group(function () {
     
     Route::controller(SuppliersController::class)->group(function() {
         Route::get('/suppliers', 'index')->name('suppliers.index');
-        Route::get('/suppliers/create', 'create')->name('suppliers.create');
+        Route::get('/suppliers/new', 'create')->name('suppliers.create');
         Route::post('/suppliers', 'store')->name('suppliers.store');
         Route::get('/suppliers/{supplier}/edit', 'edit')->name('suppliers.edit');
         Route::put('/suppliers/{supplier}', 'update')->name('suppliers.update');
@@ -61,7 +61,7 @@ Route::middleware('auth')->group(function () {
     
     Route::controller(PurchasesController::class)->group(function() {
         Route::get('/purchases', 'index')->name('purchases.index');
-        Route::get('/purchases/create', 'create')->name('purchases.create');
+        Route::get('/purchases/new', 'create')->name('purchases.create');
         Route::post('/purchases', 'store')->name('purchases.store');
         Route::get('/purchases/{purchase}/edit', 'edit')->name('purchases.edit');
         Route::put('/purchases/{purchase}', 'update')->name('purchases.update');
@@ -70,7 +70,7 @@ Route::middleware('auth')->group(function () {
     
     Route::controller(CustomersController::class)->group(function() {
         Route::get('/customers', 'index')->name('customers.index');
-        Route::get('/customers/create', 'create')->name('customers.create');
+        Route::get('/customers/new', 'create')->name('customers.create');
         Route::post('/customers', 'store')->name('customers.store');
         Route::get('/customers/{customer}/edit', 'edit')->name('customers.edit');
         Route::put('/customers/{customer}', 'update')->name('customers.update');
@@ -79,14 +79,14 @@ Route::middleware('auth')->group(function () {
     
     Route::controller(InventoryController::class)->group(function() {
         Route::get('/inventory', 'index')->name('inventory.index');
-        Route::get('/inventory/create', 'create')->name('inventory.create');
+        Route::get('/inventory/new', 'create')->name('inventory.create');
         Route::post('/inventory', 'store')->name('inventory.store');
         Route::delete('/inventory/{item}', 'destroy')->name('inventory.destroy');
     });
     
     Route::controller(ReportsController::class)->group(function() {
         Route::get('/reports', 'index')->name('reports.index');
-        Route::get('/reports/create', 'create')->name('reports.create');
+        Route::get('/reports/new', 'create')->name('reports.create');
         Route::post('/reports', 'store')->name('reports.store');
         Route::get('/reports/{report}/edit', 'edit')->name('reports.edit');
         Route::put('/reports/{report}', 'update')->name('reports.update');

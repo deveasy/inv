@@ -18,6 +18,7 @@ return new class extends Migration
             $table->id();
             $table->string('category_name');
             $table->text('category_description')->nullable();
+            $table->foreignId('parent_category')->nullable();
         });
     }
 

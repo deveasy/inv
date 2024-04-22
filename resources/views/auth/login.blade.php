@@ -6,12 +6,13 @@
             <div class="nk-block-head-content">
                 <h4 class="nk-block-title">Sign-In</h4>
                 <div class="nk-block-des">
-                    <p>Access the Creace Inventory panel using your email and password.</p>
+                    <p>Access Creace Inventory using your email and password.</p>
                 </div>
             </div>
         </div>
         <form method="POST" action="{{ route('login') }}">
         @csrf
+            <x-input-error :messages="$errors->get('email')" class="mt-2 alert alert-danger" />
             <div class="form-group">
                 <div class="form-label-group">
                     <label class="form-label" for="default-01">Username</label>
@@ -20,7 +21,6 @@
                     <input type="text" name="email" class="form-control form-control-lg" id="email" placeholder="Enter your username" autofocus>
                 </div>
             </div>
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
             <div class="form-group">
                 <div class="form-label-group">
                     <label class="form-label" for="password">Password</label>
@@ -40,13 +40,6 @@
         </form>
         <div class="form-note-s2 text-center pt-4"> New on our platform? <a href="{{ route('register') }}">Create an account</a>
         </div>
-        <div class="text-center pt-4 pb-3">
-            <h6 class="overline-title overline-title-sap"><span>OR</span></h6>
-        </div>
-        <ul class="nav justify-center gx-4">
-            <li class="nav-item"><a class="nav-link" href="#">Facebook</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Google</a></li>
-        </ul>
     </div>
 </div>
 </x-auth-layout>

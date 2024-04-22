@@ -12,72 +12,23 @@
                     </div><!-- .nk-block-head -->
                     <div class="nk-block">
                         <div class="row g-gs">
-                            <div class="col-xxl-7">
+                            <div class="col-xxl-6">
                                 <div class="card card-bordered h-100">
                                     <div class="card-inner">
                                         <form action="#">
                                             <div class="row g-3 align-center">
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label class="form-label" for="name">Name</label>
-                                                        <span class="form-note">The name that appears on your site.</span>
-                                                    </div>
-                                                </div><!-- .col -->
-                                                <div class="col-md-6">
+                                                <div class="col-12">
                                                     <div class="form-group">
                                                         <div class="form-control-wrap">
-                                                            <input type="text" class="form-control" id="name" placeholder="Name">
+                                                            <div class="form-icon form-icon-right">
+                                                                <em class="icon ni ni-search"></em>
+                                                            </div>
+                                                            <input type="text" class="form-control form-control-lg" id="name" placeholder="Search or scan for an item">
                                                         </div>
                                                     </div>
                                                 </div><!-- col -->
                                             </div><!-- .row -->
-                                            <div class="row g-3 align-center">
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label class="form-label" for="slug">Slug</label>
-                                                        <span class="form-note">The “slug” is URL-friendly version of the name.</span>
-                                                    </div>
-                                                </div><!-- .col -->
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <div class="form-control-wrap">
-                                                            <input type="text" class="form-control" id="slug" placeholder="Slug">
-                                                        </div>
-                                                    </div>
-                                                </div><!-- col -->
-                                            </div><!-- .row -->
-                                            <div class="row g-3 align-center">
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label class="form-label">Parent Category</label>
-                                                        <span class="form-note">Categories can have a hierarchy.</span>
-                                                    </div>
-                                                </div><!-- .col -->
-                                                <div class="col-md-6">
-                                                    <div class="form-control-wrap">
-                                                        <select class="form-select" data-placeholder="Parent Category">
-                                                            <option value="default">None</option>
-                                                            <option value="uncategorized">Uncategorized</option>
-                                                            <option value="covid">Covid</option>
-                                                            <option value="seo">SEO</option>
-                                                            <option value="website">Website</option>
-                                                        </select>
-                                                    </div>
-                                                </div><!-- col -->
-                                            </div><!-- .row -->
-                                            <div class="row g-3 align-center">
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label class="form-label" for="addDescription">Description</label>
-                                                        <span class="form-note">The description is not prominent by default.</span>
-                                                    </div>
-                                                </div><!-- .col -->
-                                                <div class="col-md-6">
-                                                    <div class="form-control-wrap">
-                                                        <textarea class="form-control form-control-sm no-resize" id="addDescription" placeholder="Write your description"></textarea>
-                                                    </div>
-                                                </div><!-- col -->
-                                            </div><!-- .row -->
+                                            
                                             <div class="row g-3">
                                                 <div class="col-12">
                                                     <div class="form-group mt-2">
@@ -86,10 +37,76 @@
                                                 </div>
                                             </div>
                                         </form><!-- form -->
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">First</th>
+                                                    <th scope="col">Last</th>
+                                                    <th scope="col">Handle</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>Mark</td>
+                                                    <td>Otto</td>
+                                                    <td>@mdo</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2</th>
+                                                    <td>Jacob</td>
+                                                    <td>Thornton</td>
+                                                    <td>@fat</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>Larry</td>
+                                                    <td>the Bird</td>
+                                                    <td>@twitter</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>Larry</td>
+                                                    <td>the Bird</td>
+                                                    <td>@twitter</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>Larry</td>
+                                                    <td>the Bird</td>
+                                                    <td>@twitter</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>Larry</td>
+                                                    <td>the Bird</td>
+                                                    <td>@twitter</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>Larry</td>
+                                                    <td>the Bird</td>
+                                                    <td>@twitter</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>Larry</td>
+                                                    <td>the Bird</td>
+                                                    <td>@twitter</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>Larry</td>
+                                                    <td>the Bird</td>
+                                                    <td>@twitter</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </div><!-- .card-inner -->
                                 </div><!-- .card -->
                             </div><!-- .col -->
-                            <div class="col-xxl-5">
+                            <div class="col-xxl-6">
                                 <div class="card card-bordered">
                                     <div class="card-inner-group">
                                         <div class="card-inner position-relative card-tools-toggle">
@@ -114,35 +131,23 @@
                                         <div class="card-inner p-0">
                                             <div class="nk-tb-list nk-tb-ulist">
                                                 <div class="nk-tb-item nk-tb-head">
-                                                    <div class="nk-tb-col nk-tb-col-check">
-                                                        <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                            <input type="checkbox" class="custom-control-input" id="uid">
-                                                            <label class="custom-control-label" for="uid"></label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="nk-tb-col"><span class="sub-text">Name</span></div>
-                                                    <div class="nk-tb-col tb-col-xxl"><span class="sub-text">Description</span></div>
-                                                    <div class="nk-tb-col tb-col-sm"><span class="sub-text">Slug</span></div>
-                                                    <div class="nk-tb-col"><span class="sub-text">Count</span></div>
+                                                    <div class="nk-tb-col tb-col-xxl"><span class="sub-text">Item</span></div>
+                                                    <div class="nk-tb-col"><span class="sub-text">Qty</span></div>
+                                                    <div class="nk-tb-col tb-col-sm"><span class="sub-text">Unit Price</span></div>
+                                                    <div class="nk-tb-col"><span class="sub-text">Total</span></div>
                                                     <div class="nk-tb-col nk-tb-col-tools text-right"></div>
                                                 </div><!-- .nk-tb-item -->
                                                 <div class="nk-tb-item">
-                                                    <div class="nk-tb-col nk-tb-col-check">
-                                                        <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                            <input type="checkbox" class="custom-control-input" id="uid1">
-                                                            <label class="custom-control-label" for="uid1"></label>
+                                                    <div class="nk-tb-col tb-col-xxl">
+                                                        <div class="text-ellipsis w-max-200px">
+                                                            <span>Laptop</span>
                                                         </div>
                                                     </div>
                                                     <div class="nk-tb-col">
-                                                        <span>Uncategorized</span>
-                                                    </div>
-                                                    <div class="nk-tb-col tb-col-xxl">
-                                                        <div class="text-ellipsis w-max-200px">
-                                                            <span>—</span>
-                                                        </div>
+                                                        <span>1</span>
                                                     </div>
                                                     <div class="nk-tb-col tb-col-sm">
-                                                        <span>uncategorized</span>
+                                                        <span>2.00</span>
                                                     </div>
                                                     <div class="nk-tb-col">
                                                         <div>
@@ -151,16 +156,6 @@
                                                     </div>
                                                     <div class="nk-tb-col nk-tb-col-tools">
                                                         <ul class="nk-tb-actions gx-1">
-                                                            <li class="nk-tb-action-hidden">
-                                                                <a href="#" class="btn btn-trigger btn-icon" data-toggle="modal" data-target="#editCategory" data-placement="top" title="Edit">
-                                                                    <em class="icon ni ni-edit-fill"></em>
-                                                                </a>
-                                                            </li>
-                                                            <li class="nk-tb-action-hidden">
-                                                                <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="Move To Trash">
-                                                                    <em class="icon ni ni-trash-fill"></em>
-                                                                </a>
-                                                            </li>
                                                             <li>
                                                                 <div class="drodown">
                                                                     <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
@@ -176,22 +171,16 @@
                                                     </div>
                                                 </div><!-- .nk-tb-item -->
                                                 <div class="nk-tb-item">
-                                                    <div class="nk-tb-col nk-tb-col-check">
-                                                        <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                            <input type="checkbox" class="custom-control-input" id="uid2">
-                                                            <label class="custom-control-label" for="uid2"></label>
+                                                    <div class="nk-tb-col tb-col-xxl">
+                                                        <div class="text-ellipsis w-max-200px">
+                                                            <span>Desktop</span>
                                                         </div>
                                                     </div>
                                                     <div class="nk-tb-col">
-                                                        <span>SEO</span>
-                                                    </div>
-                                                    <div class="nk-tb-col tb-col-xxl">
-                                                        <div class="text-ellipsis w-max-200px">
-                                                            <span>Category description is a paragraph or two of content on the page representing an entire category of items for sale</span>
-                                                        </div>
+                                                        <span>5</span>
                                                     </div>
                                                     <div class="nk-tb-col tb-col-sm">
-                                                        <span>seo</span>
+                                                        <span>100.00</span>
                                                     </div>
                                                     <div class="nk-tb-col">
                                                         <div>
@@ -200,16 +189,6 @@
                                                     </div>
                                                     <div class="nk-tb-col nk-tb-col-tools">
                                                         <ul class="nk-tb-actions gx-1">
-                                                            <li class="nk-tb-action-hidden">
-                                                                <a href="#" class="btn btn-trigger btn-icon" data-toggle="modal" data-target="#editCategory" data-placement="top" title="Edit">
-                                                                    <em class="icon ni ni-edit-fill"></em>
-                                                                </a>
-                                                            </li>
-                                                            <li class="nk-tb-action-hidden">
-                                                                <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="Move To Trash">
-                                                                    <em class="icon ni ni-trash-fill"></em>
-                                                                </a>
-                                                            </li>
                                                             <li>
                                                                 <div class="drodown">
                                                                     <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
@@ -225,22 +204,16 @@
                                                     </div>
                                                 </div><!-- .nk-tb-item -->
                                                 <div class="nk-tb-item">
-                                                    <div class="nk-tb-col nk-tb-col-check">
-                                                        <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                            <input type="checkbox" class="custom-control-input" id="uid3">
-                                                            <label class="custom-control-label" for="uid3"></label>
+                                                    <div class="nk-tb-col tb-col-xxl">
+                                                        <div class="text-ellipsis w-max-200px">
+                                                            <span>All-in-one</span>
                                                         </div>
                                                     </div>
                                                     <div class="nk-tb-col">
-                                                        <span>Covid</span>
-                                                    </div>
-                                                    <div class="nk-tb-col tb-col-xxl">
-                                                        <div class="text-ellipsis w-max-200px">
-                                                            <span>—</span>
-                                                        </div>
+                                                        <span>16</span>
                                                     </div>
                                                     <div class="nk-tb-col tb-col-sm">
-                                                        <span>covid</span>
+                                                        <span>2500.00</span>
                                                     </div>
                                                     <div class="nk-tb-col">
                                                         <div>
@@ -249,16 +222,6 @@
                                                     </div>
                                                     <div class="nk-tb-col nk-tb-col-tools">
                                                         <ul class="nk-tb-actions gx-1">
-                                                            <li class="nk-tb-action-hidden">
-                                                                <a href="#" class="btn btn-trigger btn-icon" data-toggle="modal" data-target="#editCategory" data-placement="top" title="Edit">
-                                                                    <em class="icon ni ni-edit-fill"></em>
-                                                                </a>
-                                                            </li>
-                                                            <li class="nk-tb-action-hidden">
-                                                                <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="Move To Trash">
-                                                                    <em class="icon ni ni-trash-fill"></em>
-                                                                </a>
-                                                            </li>
                                                             <li>
                                                                 <div class="drodown">
                                                                     <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>

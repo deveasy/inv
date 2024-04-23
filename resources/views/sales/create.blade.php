@@ -41,65 +41,65 @@
                                             <thead>
                                                 <tr>
                                                     <th scope="col">#</th>
-                                                    <th scope="col">First</th>
-                                                    <th scope="col">Last</th>
-                                                    <th scope="col">Handle</th>
+                                                    <th scope="col">Product</th>
+                                                    <th scope="col">Price (&#8373;)</th>
+                                                    <th scope="col">In Stock</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
                                                     <th scope="row">1</th>
-                                                    <td>Mark</td>
-                                                    <td>Otto</td>
-                                                    <td>@mdo</td>
+                                                    <td>Milo</td>
+                                                    <td>200.00</td>
+                                                    <td>200</td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">2</th>
-                                                    <td>Jacob</td>
-                                                    <td>Thornton</td>
-                                                    <td>@fat</td>
+                                                    <td>Nido</td>
+                                                    <td>50.00</td>
+                                                    <td>250</td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">3</th>
-                                                    <td>Larry</td>
-                                                    <td>the Bird</td>
-                                                    <td>@twitter</td>
+                                                    <td>Cowbell</td>
+                                                    <td>10.00</td>
+                                                    <td>250</td>
                                                 </tr>
                                                 <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>Larry</td>
-                                                    <td>the Bird</td>
-                                                    <td>@twitter</td>
+                                                    <th scope="row">4</th>
+                                                    <td>Carnation Milk</td>
+                                                    <td>150.00</td>
+                                                    <td>100</td>
                                                 </tr>
                                                 <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>Larry</td>
-                                                    <td>the Bird</td>
-                                                    <td>@twitter</td>
+                                                    <th scope="row">5</th>
+                                                    <td>Ideal Milk</td>
+                                                    <td>1000.00</td>
+                                                    <td>99</td>
                                                 </tr>
                                                 <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>Larry</td>
-                                                    <td>the Bird</td>
-                                                    <td>@twitter</td>
+                                                    <th scope="row">6</th>
+                                                    <td>Sugar 100g</td>
+                                                    <td>210.00</td>
+                                                    <td>120</td>
                                                 </tr>
                                                 <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>Larry</td>
-                                                    <td>the Bird</td>
-                                                    <td>@twitter</td>
+                                                    <th scope="row">7</th>
+                                                    <td>Choco Milo</td>
+                                                    <td>15.00</td>
+                                                    <td>350</td>
                                                 </tr>
                                                 <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>Larry</td>
-                                                    <td>the Bird</td>
-                                                    <td>@twitter</td>
+                                                    <th scope="row">8</th>
+                                                    <td>Yazz Powder</td>
+                                                    <td>10.00</td>
+                                                    <td>400</td>
                                                 </tr>
                                                 <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>Larry</td>
-                                                    <td>the Bird</td>
-                                                    <td>@twitter</td>
+                                                    <th scope="row">9</th>
+                                                    <td>OMO</td>
+                                                    <td>500.00</td>
+                                                    <td>350</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -132,7 +132,7 @@
                                             <div class="nk-tb-list nk-tb-ulist">
                                                 <div class="nk-tb-item nk-tb-head">
                                                     <div class="nk-tb-col tb-col-xxl"><span class="sub-text">Item</span></div>
-                                                    <div class="nk-tb-col"><span class="sub-text">Qty</span></div>
+                                                    <div class="nk-tb-col tb-col-sm"><span class="sub-text">Qty</span></div>
                                                     <div class="nk-tb-col tb-col-sm"><span class="sub-text">Unit Price</span></div>
                                                     <div class="nk-tb-col"><span class="sub-text">Total</span></div>
                                                     <div class="nk-tb-col nk-tb-col-tools text-right"></div>
@@ -143,15 +143,19 @@
                                                             <span>Laptop</span>
                                                         </div>
                                                     </div>
-                                                    <div class="nk-tb-col">
-                                                        <span>1</span>
+                                                    <div class="nk-tb-col tb-col-sm">
+                                                        <div class="input-group">
+                                                            <button class="btn btn-dim btn-light" type="button" id="qtySubtract"><em class="icon ni ni-minus"></em></button>
+                                                            <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon">
+                                                            <button class="btn btn-dim btn-light" type="button" id="qtyAdd"><em class="icon ni ni-plus"></em></button>
+                                                        </div>
                                                     </div>
                                                     <div class="nk-tb-col tb-col-sm">
                                                         <span>2.00</span>
                                                     </div>
                                                     <div class="nk-tb-col">
                                                         <div>
-                                                            <span>0</span>
+                                                            <input type="text" class="form-control-plaintext" value="200.00">
                                                         </div>
                                                     </div>
                                                     <div class="nk-tb-col nk-tb-col-tools">
@@ -176,15 +180,19 @@
                                                             <span>Desktop</span>
                                                         </div>
                                                     </div>
-                                                    <div class="nk-tb-col">
-                                                        <span>5</span>
+                                                    <div class="nk-tb-col tb-col-sm">
+                                                        <div class="input-group">
+                                                            <button class="btn btn-dim btn-light" type="button" id="qtySubtract"><em class="icon ni ni-minus"></em></button>
+                                                            <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon">
+                                                            <button class="btn btn-dim btn-light" type="button" id="qtyAdd"><em class="icon ni ni-plus"></em></button>
+                                                        </div>
                                                     </div>
                                                     <div class="nk-tb-col tb-col-sm">
                                                         <span>100.00</span>
                                                     </div>
                                                     <div class="nk-tb-col">
                                                         <div>
-                                                            <span>2</span>
+                                                            <input type="text" class="form-control-plaintext" value="200.00">
                                                         </div>
                                                     </div>
                                                     <div class="nk-tb-col nk-tb-col-tools">
@@ -209,15 +217,19 @@
                                                             <span>All-in-one</span>
                                                         </div>
                                                     </div>
-                                                    <div class="nk-tb-col">
-                                                        <span>16</span>
+                                                    <div class="nk-tb-col tb-col-sm">
+                                                        <div class="input-group">
+                                                            <button class="btn btn-dim btn-light" type="button" id="qtySubtract"><em class="icon ni ni-minus"></em></button>
+                                                            <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon">
+                                                            <button class="btn btn-dim btn-light" type="button" id="qtyAdd"><em class="icon ni ni-plus"></em></button>
+                                                        </div>
                                                     </div>
                                                     <div class="nk-tb-col tb-col-sm">
                                                         <span>2500.00</span>
                                                     </div>
                                                     <div class="nk-tb-col">
                                                         <div>
-                                                            <span>1</span>
+                                                            <input type="text" class="form-control-plaintext" value="200.00">
                                                         </div>
                                                     </div>
                                                     <div class="nk-tb-col nk-tb-col-tools">

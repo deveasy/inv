@@ -6,3 +6,8 @@
  * Version	 :	1.0.0
  * Updated	 :	07.23.2020
 **/
+
+.qty{ width: 20%; }
+.total{ width: 20%; }
+.price{ width: 20%; }
+.item{ width: 40%; }

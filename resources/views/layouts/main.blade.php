@@ -351,6 +351,9 @@
     <script src="./assets/js/bundle.js?ver=2.9.1"></script>
     <script src="./assets/js/scripts.js?ver=2.9.1"></script>
     <script src="./assets/js/charts/chart-hotel.js?ver=2.9.1"></script>
+    <link rel="stylesheet" href="./assets/css/editors/summernote.css?ver=2.9.1">
+    <script src="./assets/js/libs/editors/summernote.js?ver=2.9.1"></script>
+    <script src="./assets/js/editors.js?ver=2.9.1"></script>
 </body>
 
 </html>

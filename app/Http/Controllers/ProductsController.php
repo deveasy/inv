@@ -20,7 +20,14 @@ class ProductsController extends Controller
 
     public function store(Request $request)
     {
-        Products::create($request->all());
+        $product = new Products();
+
+        $product = Products::create([
+            'product_name' => $request->input('productName'),
+            'product_description' => $request->input('productDescription'),
+            'categories_id' => $request->input('category')
+        ]);
+
         return redirect()->route('products.index');
     }
 

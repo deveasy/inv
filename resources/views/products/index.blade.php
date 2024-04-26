@@ -29,7 +29,7 @@
                                                 </div>
                                             </li>
                                             <li class="nk-block-tools-opt">
-                                                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#addProduct"><em class="icon ni ni-plus"></em>
+                                                <a href="{{ route('products.create') }}" class="btn btn-primary"><em class="icon ni ni-plus"></em>
                                                     <span>Add Product</span>
                                                 </a>
                                             </li>

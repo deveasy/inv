@@ -266,7 +266,7 @@
                                                                 <div class="input-group">
                                                                     <input type="text" class="form-control form-control-lg" placeholder="Total Amount" readonly>
                                                                     <div class="input-group-append">
-                                                                        <button class="btn btn-secondary">Pay Now</button>
+                                                                        <button class="btn btn-secondary"><em class="icon ni ni-navigate-fill"></em> <span>Pay Now</span></button>
                                                                     </div>
                                                                 </div>
                                                             </div>

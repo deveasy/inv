@@ -13,6 +13,9 @@ class Products extends Model
 
     protected $fillable = ['product_name', 'categories_id', 'product_description'];
     
+    // Disable automatic timestamps
+    public $timestamps = false;
+    
     public function category()
     {
         return $this->belongsTo(Category::class);

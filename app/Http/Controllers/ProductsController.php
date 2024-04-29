@@ -25,6 +25,7 @@ class ProductsController extends Controller
         $product->product_name = $request->input('productName');
         $product->product_description = $request->input('productDescription');
         $product->categories_id = $request->input('category');
+        $product->date_created = date('Y-m-d');
 
         $product->save();
 

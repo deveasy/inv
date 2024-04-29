@@ -22,11 +22,11 @@ class ProductsController extends Controller
     {
         $product = new Products();
 
-        $product = Products::create([
-            'product_name' => $request->input('productName'),
-            'product_description' => $request->input('productDescription'),
-            'categories_id' => $request->input('category')
-        ]);
+        $product->product_name = $request->input('productName');
+        $product->product_description = $request->input('productDescription');
+        $product->categories_id = $request->input('category');
+
+        $product->save();
 
         return redirect()->route('products.index');
     }

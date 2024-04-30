@@ -49,6 +49,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/products/{product}/edit', 'edit')->name('products.edit');
         Route::put('/products/{product}', 'update')->name('products.update');
         Route::delete('/products/{product}', 'destroy')->name('products.destroy');
+        Route::get('/products/categories', 'categories')->name('products.categories');
     });
     
     Route::controller(SuppliersController::class)->group(function() {

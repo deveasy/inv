@@ -93,10 +93,10 @@
                         </a>
                         <ul class="nk-menu-sub">
                             <li class="nk-menu-item">
-                                <a href="{{ route('inventory.index') }}" class="nk-menu-link"><span class="nk-menu-text">Products</span></a>
+                                <a href="{{ route('products.index') }}" class="nk-menu-link"><span class="nk-menu-text">Products</span></a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href="{{ route('inventory.index') }}" class="nk-menu-link"><span class="nk-menu-text">Categories</span></a>
+                                <a href="{{ route('products.categories') }}" class="nk-menu-link"><span class="nk-menu-text">Categories</span></a>
                             </li>
                             <li class="nk-menu-item">
                                 <a href="{{ route('inventory.index') }}" class="nk-menu-link"><span class="nk-menu-text">History</span></a>

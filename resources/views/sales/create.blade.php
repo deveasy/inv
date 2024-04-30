@@ -1,4 +1,6 @@
-<x-main-layout>
+@extends('layouts.main')
+
+@section('content')
     <div class="nk-content ">
         <div class="container-fluid">
             <div class="nk-content-inner">
@@ -284,4 +286,4 @@
             </div>
         </div>
     </div>
-</x-main-layout>
+@endsection

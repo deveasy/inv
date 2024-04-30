@@ -1,4 +1,6 @@
-<x-main-layout>
+@extends('layouts.main')
+
+@section('content')
     <div class="nk-content ">
         <div class="container-fluid">
             <div class="nk-content-inner">
@@ -31,6 +33,11 @@
                                             <li class="nk-block-tools-opt">
                                                 <a href="{{ route('products.create') }}" class="btn btn-primary"><em class="icon ni ni-plus"></em>
                                                     <span>Add Product</span>
+                                                </a>
+                                            </li>
+                                            <li class="nk-block-tools-opt">
+                                                <a href="#" class="btn btn-secondary" data-toggle="modal" data-target="#addProduct"><em class="icon ni ni-arrow-down"></em>
+                                                    <span>Import Products</span>
                                                 </a>
                                             </li>
                                         </ul>
@@ -76,6 +83,7 @@
                                             </tr><!-- .nk-tb-item -->
                                         </thead>
                                         <tbody>
+                                            @foreach($products as $product)
                                             <tr class="nk-tb-item">
                                                 <td class="nk-tb-col nk-tb-col-check">
                                                     <div class="custom-control custom-control-sm custom-checkbox notext">
@@ -86,7 +94,7 @@
                                                 <td class="nk-tb-col">
                                                     <a href="#" class="project-title">
                                                         <div class="product-info">
-                                                            <h6 class="title">Laptop</h6>
+                                                            <h6 class="title">{{ $product->product_name }}</h6>
                                                         </div>
                                                     </a>
                                                 </td>
@@ -100,7 +108,7 @@
                                                     <span class="amount">$1000.00</span>
                                                 </td>
                                                 <td class="nk-tb-col">
-                                                    <span class="amount">$800.00</span>
+                                                    <span class="amount">GHS{{ $product->price }}</span>
                                                 </td>
                                                 <td class="nk-tb-col tb-col-lg">
                                                     <span>Electric</span>
@@ -131,516 +139,14 @@
                                                     </ul>
                                                 </td>
                                             </tr><!-- .nk-tb-item -->
-                                            <tr class="nk-tb-item">
-                                                <td class="nk-tb-col nk-tb-col-check">
-                                                    <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                        <input type="checkbox" class="custom-control-input" id="pid-02">
-                                                        <label class="custom-control-label" for="pid-02"></label>
-                                                    </div>
-                                                </td>
-                                                <td class="nk-tb-col">
-                                                    <a href="#" class="project-title">
-                                                        <div class="product-info">
-                                                            <h6 class="title">Chair</h6>
-                                                        </div>
-                                                    </a>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-xxl">
-                                                    <span><a href="#">#8H4G65</a></span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-md">
-                                                    <span class="user-avatar md"><img src="./images/crm/product/c.jpg" alt=""></span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-lg">
-                                                    <span class="amount">$620.00</span>
-                                                </td>
-                                                <td class="nk-tb-col">
-                                                    <span class="amount">$600.00</span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-lg">
-                                                    <span>Furniture</span>
-                                                </td>
-                                                <td class="nk-tb-col">
-                                                    <span>0</span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-xxl">
-                                                    <span class="badge badge-dim badge-outline-danger">Out of Stock</span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-xxl">
-                                                    <span>Brompton</span>
-                                                </td>
-                                                <td class="nk-tb-col nk-tb-col-tools">
-                                                    <ul class="nk-tb-actions gx-1">
-                                                        <li>
-                                                            <div class="drodown">
-                                                                <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                                <div class="dropdown-menu dropdown-menu-right">
-                                                                    <ul class="link-list-opt no-bdr">
-                                                                        <li><a href="#"><em class="icon ni ni-eye"></em><span>View Product</span></a></li>
-                                                                        <li><a href="#" data-toggle="modal" data-target="#editProduct"><em class="icon ni ni-edit"></em><span>Edit Product</span></a></li>
-                                                                        <li><a href="#" data-toggle="modal" data-target="#deleteProduct"><em class="icon ni ni-delete"></em><span>Delete Product</span></a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </td>
-                                            </tr><!-- .nk-tb-item -->
-                                            <tr class="nk-tb-item">
-                                                <td class="nk-tb-col nk-tb-col-check">
-                                                    <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                        <input type="checkbox" class="custom-control-input" id="pid-03">
-                                                        <label class="custom-control-label" for="pid-03"></label>
-                                                    </div>
-                                                </td>
-                                                <td class="nk-tb-col">
-                                                    <a href="#" class="project-title">
-                                                        <div class="product-info">
-                                                            <h6 class="title">CPU Casing</h6>
-                                                        </div>
-                                                    </a>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-xxl">
-                                                    <span><a href="#">#6H4G67</a></span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-md">
-                                                    <span class="user-avatar md"><img src="./images/crm/product/d.jpg" alt=""></span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-lg">
-                                                    <span class="amount">$1000.00</span>
-                                                </td>
-                                                <td class="nk-tb-col">
-                                                    <span class="amount">$700.00</span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-lg">
-                                                    <span>Electric</span>
-                                                </td>
-                                                <td class="nk-tb-col">
-                                                    <span>50</span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-xxl">
-                                                    <span class="badge badge-dim badge-outline-primary">Available</span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-xxl">
-                                                    <span>Gamemax Rockstar</span>
-                                                </td>
-                                                <td class="nk-tb-col nk-tb-col-tools">
-                                                    <ul class="nk-tb-actions gx-1">
-                                                        <li>
-                                                            <div class="drodown">
-                                                                <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                                <div class="dropdown-menu dropdown-menu-right">
-                                                                    <ul class="link-list-opt no-bdr">
-                                                                        <li><a href="#"><em class="icon ni ni-eye"></em><span>View Product</span></a></li>
-                                                                        <li><a href="#" data-toggle="modal" data-target="#editProduct"><em class="icon ni ni-edit"></em><span>Edit Product</span></a></li>
-                                                                        <li><a href="#" data-toggle="modal" data-target="#deleteProduct"><em class="icon ni ni-delete"></em><span>Delete Product</span></a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </td>
-                                            </tr><!-- .nk-tb-item -->
-                                            <tr class="nk-tb-item">
-                                                <td class="nk-tb-col nk-tb-col-check">
-                                                    <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                        <input type="checkbox" class="custom-control-input" id="pid-04">
-                                                        <label class="custom-control-label" for="pid-04"></label>
-                                                    </div>
-                                                </td>
-                                                <td class="nk-tb-col">
-                                                    <a href="#" class="project-title">
-                                                        <div class="product-info">
-                                                            <h6 class="title">Drone</h6>
-                                                        </div>
-                                                    </a>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-xxl">
-                                                    <span><a href="#">#2H4S60</a></span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-md">
-                                                    <span class="user-avatar md"><img src="./images/crm/product/e.jpg" alt=""></span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-lg">
-                                                    <span class="amount">$4000.00</span>
-                                                </td>
-                                                <td class="nk-tb-col">
-                                                    <span class="amount">$3500.00</span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-lg">
-                                                    <span>Electric</span>
-                                                </td>
-                                                <td class="nk-tb-col">
-                                                    <span>0</span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-xxl">
-                                                    <span class="badge badge-dim badge-outline-danger">Out of Stock</span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-xxl">
-                                                    <span>Quadcopter </span>
-                                                </td>
-                                                <td class="nk-tb-col nk-tb-col-tools">
-                                                    <ul class="nk-tb-actions gx-1">
-                                                        <li>
-                                                            <div class="drodown">
-                                                                <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                                <div class="dropdown-menu dropdown-menu-right">
-                                                                    <ul class="link-list-opt no-bdr">
-                                                                        <li><a href="#"><em class="icon ni ni-eye"></em><span>View Product</span></a></li>
-                                                                        <li><a href="#" data-toggle="modal" data-target="#editProduct"><em class="icon ni ni-edit"></em><span>Edit Product</span></a></li>
-                                                                        <li><a href="#" data-toggle="modal" data-target="#deleteProduct"><em class="icon ni ni-delete"></em><span>Delete Product</span></a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </td>
-                                            </tr><!-- .nk-tb-item -->
-                                            <tr class="nk-tb-item">
-                                                <td class="nk-tb-col nk-tb-col-check">
-                                                    <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                        <input type="checkbox" class="custom-control-input" id="pid-05">
-                                                        <label class="custom-control-label" for="pid-05"></label>
-                                                    </div>
-                                                </td>
-                                                <td class="nk-tb-col">
-                                                    <a href="#" class="project-title">
-                                                        <div class="product-info">
-                                                            <h6 class="title">Backlit Keyboard</h6>
-                                                        </div>
-                                                    </a>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-xxl">
-                                                    <span><a href="#">#9HTJ67</a></span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-md">
-                                                    <span class="user-avatar md"><img src="./images/crm/product/f.jpg" alt=""></span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-lg">
-                                                    <span class="amount">$150.00</span>
-                                                </td>
-                                                <td class="nk-tb-col">
-                                                    <span class="amount">$120.00</span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-lg">
-                                                    <span>Electric</span>
-                                                </td>
-                                                <td class="nk-tb-col">
-                                                    <span>13</span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-xxl">
-                                                    <span class="badge badge-dim badge-outline-primary">Available</span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-xxl">
-                                                    <span>A4tech</span>
-                                                </td>
-                                                <td class="nk-tb-col nk-tb-col-tools">
-                                                    <ul class="nk-tb-actions gx-1">
-                                                        <li>
-                                                            <div class="drodown">
-                                                                <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                                <div class="dropdown-menu dropdown-menu-right">
-                                                                    <ul class="link-list-opt no-bdr">
-                                                                        <li><a href="#"><em class="icon ni ni-eye"></em><span>View Product</span></a></li>
-                                                                        <li><a href="#" data-toggle="modal" data-target="#editProduct"><em class="icon ni ni-edit"></em><span>Edit Product</span></a></li>
-                                                                        <li><a href="#" data-toggle="modal" data-target="#deleteProduct"><em class="icon ni ni-delete"></em><span>Delete Product</span></a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </td>
-                                            </tr><!-- .nk-tb-item -->
-                                            <tr class="nk-tb-item">
-                                                <td class="nk-tb-col nk-tb-col-check">
-                                                    <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                        <input type="checkbox" class="custom-control-input" id="pid-06">
-                                                        <label class="custom-control-label" for="pid-06"></label>
-                                                    </div>
-                                                </td>
-                                                <td class="nk-tb-col">
-                                                    <a href="#" class="project-title">
-                                                        <div class="product-info">
-                                                            <h6 class="title">Headset</h6>
-                                                        </div>
-                                                    </a>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-xxl">
-                                                    <span><a href="#">#4H1G6K</a></span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-md">
-                                                    <span class="user-avatar md"><img src="./images/crm/product/g.jpg" alt=""></span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-lg">
-                                                    <span class="amount">$400.00</span>
-                                                </td>
-                                                <td class="nk-tb-col">
-                                                    <span class="amount">$380.00</span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-lg">
-                                                    <span>Tools</span>
-                                                </td>
-                                                <td class="nk-tb-col">
-                                                    <span>0</span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-xxl">
-                                                    <span class="badge badge-dim badge-outline-danger">Out of Stock</span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-xxl">
-                                                    <span>ATH-G1WL</span>
-                                                </td>
-                                                <td class="nk-tb-col nk-tb-col-tools">
-                                                    <ul class="nk-tb-actions gx-1">
-                                                        <li>
-                                                            <div class="drodown">
-                                                                <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                                <div class="dropdown-menu dropdown-menu-right">
-                                                                    <ul class="link-list-opt no-bdr">
-                                                                        <li><a href="#"><em class="icon ni ni-eye"></em><span>View Product</span></a></li>
-                                                                        <li><a href="#" data-toggle="modal" data-target="#editProduct"><em class="icon ni ni-edit"></em><span>Edit Product</span></a></li>
-                                                                        <li><a href="#" data-toggle="modal" data-target="#deleteProduct"><em class="icon ni ni-delete"></em><span>Delete Product</span></a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </td>
-                                            </tr><!-- .nk-tb-item -->
-                                            <tr class="nk-tb-item">
-                                                <td class="nk-tb-col nk-tb-col-check">
-                                                    <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                        <input type="checkbox" class="custom-control-input" id="pid-07">
-                                                        <label class="custom-control-label" for="pid-07"></label>
-                                                    </div>
-                                                </td>
-                                                <td class="nk-tb-col">
-                                                    <a href="#" class="project-title">
-                                                        <div class="product-info">
-                                                            <h6 class="title">Phone</h6>
-                                                        </div>
-                                                    </a>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-xxl">
-                                                    <span><a href="#">#3H4J60</a></span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-md">
-                                                    <span class="user-avatar md"><img src="./images/crm/product/b.jpg" alt=""></span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-lg">
-                                                    <span class="amount">$350.00</span>
-                                                </td>
-                                                <td class="nk-tb-col">
-                                                    <span class="amount">$320.00</span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-lg">
-                                                    <span>Electric</span>
-                                                </td>
-                                                <td class="nk-tb-col">
-                                                    <span>20</span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-xxl">
-                                                    <span class="badge badge-dim badge-outline-primary">Available</span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-xxl">
-                                                    <span>Xaomi</span>
-                                                </td>
-                                                <td class="nk-tb-col nk-tb-col-tools">
-                                                    <ul class="nk-tb-actions gx-1">
-                                                        <li>
-                                                            <div class="drodown">
-                                                                <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                                <div class="dropdown-menu dropdown-menu-right">
-                                                                    <ul class="link-list-opt no-bdr">
-                                                                        <li><a href="#"><em class="icon ni ni-eye"></em><span>View Product</span></a></li>
-                                                                        <li><a href="#" data-toggle="modal" data-target="#editProduct"><em class="icon ni ni-edit"></em><span>Edit Product</span></a></li>
-                                                                        <li><a href="#" data-toggle="modal" data-target="#deleteProduct"><em class="icon ni ni-delete"></em><span>Delete Product</span></a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </td>
-                                            </tr><!-- .nk-tb-item -->
-                                            <tr class="nk-tb-item">
-                                                <td class="nk-tb-col nk-tb-col-check">
-                                                    <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                        <input type="checkbox" class="custom-control-input" id="pid-08">
-                                                        <label class="custom-control-label" for="pid-08"></label>
-                                                    </div>
-                                                </td>
-                                                <td class="nk-tb-col">
-                                                    <a href="#" class="project-title">
-                                                        <div class="product-info">
-                                                            <h6 class="title">CPU Casing</h6>
-                                                        </div>
-                                                    </a>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-xxl">
-                                                    <span><a href="#">#6H4G67</a></span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-md">
-                                                    <span class="user-avatar md"><img src="./images/crm/product/d.jpg" alt=""></span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-lg">
-                                                    <span class="amount">$1000.00</span>
-                                                </td>
-                                                <td class="nk-tb-col">
-                                                    <span class="amount">$700.00</span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-lg">
-                                                    <span>Electric</span>
-                                                </td>
-                                                <td class="nk-tb-col">
-                                                    <span>50</span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-xxl">
-                                                    <span class="badge badge-dim badge-outline-primary">Available</span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-xxl">
-                                                    <span>Gamemax Rockstar</span>
-                                                </td>
-                                                <td class="nk-tb-col nk-tb-col-tools">
-                                                    <ul class="nk-tb-actions gx-1">
-                                                        <li>
-                                                            <div class="drodown">
-                                                                <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                                <div class="dropdown-menu dropdown-menu-right">
-                                                                    <ul class="link-list-opt no-bdr">
-                                                                        <li><a href="#"><em class="icon ni ni-eye"></em><span>View Product</span></a></li>
-                                                                        <li><a href="#" data-toggle="modal" data-target="#editProduct"><em class="icon ni ni-edit"></em><span>Edit Product</span></a></li>
-                                                                        <li><a href="#" data-toggle="modal" data-target="#deleteProduct"><em class="icon ni ni-delete"></em><span>Delete Product</span></a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </td>
-                                            </tr><!-- .nk-tb-item -->
-                                            <tr class="nk-tb-item">
-                                                <td class="nk-tb-col nk-tb-col-check">
-                                                    <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                        <input type="checkbox" class="custom-control-input" id="pid-09">
-                                                        <label class="custom-control-label" for="pid-09"></label>
-                                                    </div>
-                                                </td>
-                                                <td class="nk-tb-col">
-                                                    <a href="#" class="project-title">
-                                                        <div class="product-info">
-                                                            <h6 class="title">Drone</h6>
-                                                        </div>
-                                                    </a>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-xxl">
-                                                    <span><a href="#">#2H4S60</a></span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-md">
-                                                    <span class="user-avatar md"><img src="./images/crm/product/e.jpg" alt=""></span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-lg">
-                                                    <span class="amount">$4000.00</span>
-                                                </td>
-                                                <td class="nk-tb-col">
-                                                    <span class="amount">$3500.00</span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-lg">
-                                                    <span>Electric</span>
-                                                </td>
-                                                <td class="nk-tb-col">
-                                                    <span>0</span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-xxl">
-                                                    <span class="badge badge-dim badge-outline-danger">Out of Stock</span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-xxl">
-                                                    <span>Quadcopter </span>
-                                                </td>
-                                                <td class="nk-tb-col nk-tb-col-tools">
-                                                    <ul class="nk-tb-actions gx-1">
-                                                        <li>
-                                                            <div class="drodown">
-                                                                <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                                <div class="dropdown-menu dropdown-menu-right">
-                                                                    <ul class="link-list-opt no-bdr">
-                                                                        <li><a href="#"><em class="icon ni ni-eye"></em><span>View Product</span></a></li>
-                                                                        <li><a href="#" data-toggle="modal" data-target="#editProduct"><em class="icon ni ni-edit"></em><span>Edit Product</span></a></li>
-                                                                        <li><a href="#" data-toggle="modal" data-target="#deleteProduct"><em class="icon ni ni-delete"></em><span>Delete Product</span></a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </td>
-                                            </tr><!-- .nk-tb-item -->
-                                            <tr class="nk-tb-item">
-                                                <td class="nk-tb-col nk-tb-col-check">
-                                                    <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                        <input type="checkbox" class="custom-control-input" id="pid-10">
-                                                        <label class="custom-control-label" for="pid-10"></label>
-                                                    </div>
-                                                </td>
-                                                <td class="nk-tb-col">
-                                                    <a href="#" class="project-title">
-                                                        <div class="product-info">
-                                                            <h6 class="title">Backlit Keyboard</h6>
-                                                        </div>
-                                                    </a>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-xxl">
-                                                    <span><a href="#">#9HTJ67</a></span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-md">
-                                                    <span class="user-avatar md"><img src="./images/crm/product/f.jpg" alt=""></span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-lg">
-                                                    <span class="amount">$150.00</span>
-                                                </td>
-                                                <td class="nk-tb-col">
-                                                    <span class="amount">$120.00</span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-lg">
-                                                    <span>Electric</span>
-                                                </td>
-                                                <td class="nk-tb-col">
-                                                    <span>13</span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-xxl">
-                                                    <span class="badge badge-dim badge-outline-primary">Available</span>
-                                                </td>
-                                                <td class="nk-tb-col tb-col-xxl">
-                                                    <span>A4tech</span>
-                                                </td>
-                                                <td class="nk-tb-col nk-tb-col-tools">
-                                                    <ul class="nk-tb-actions gx-1">
-                                                        <li>
-                                                            <div class="drodown">
-                                                                <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                                <div class="dropdown-menu dropdown-menu-right">
-                                                                    <ul class="link-list-opt no-bdr">
-                                                                        <li><a href="#"><em class="icon ni ni-eye"></em><span>View Product</span></a></li>
-                                                                        <li><a href="#" data-toggle="modal" data-target="#editProduct"><em class="icon ni ni-edit"></em><span>Edit Product</span></a></li>
-                                                                        <li><a href="#" data-toggle="modal" data-target="#deleteProduct"><em class="icon ni ni-delete"></em><span>Delete Product</span></a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </td>
-                                            </tr><!-- .nk-tb-item -->
+                                            @endforeach
                                         </tbody>
                                     </table><!-- .nk-tb-list -->
                                 </div><!-- .card-inner -->
                                 <div class="card-inner">
                                     <div class="nk-block-between-md g-3">
                                         <div class="g">
-                                            <ul class="pagination justify-content-center justify-content-md-start">
-                                                <li class="page-item"><a class="page-link" href="#">Prev</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                <li class="page-item"><span class="page-link"><em class="icon ni ni-more-h"></em></span></li>
-                                                <li class="page-item"><a class="page-link" href="#">6</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">7</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                                            </ul><!-- .pagination -->
+                                        {{ $products->links() }}
                                         </div>
                                         <div class="g">
                                             <div class="pagination-goto d-flex justify-content-center justify-content-md-start gx-3">
@@ -680,4 +186,39 @@
             </div>
         </div>
     </div>
-</x-main-layout>
+@endsection
+
+@section('modal')
+<div class="modal fade" id="addProduct">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <a href="#" class="close" data-dismiss="modal" aria-label="Close">
+                <em class="icon ni ni-cross-sm"></em>
+            </a>
+            <div class="modal-body modal-body-md">
+                <h5 class="modal-title">Import Products</h5>
+                <form action="{{ route('products.import') }}" method="POST" enctype="multipart/form-data" class="mt-2">
+                    @csrf
+                    <div class="row g-gs">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="form-control-wrap">
+                                    <div class="custom-file">
+                                        <input type="file" name="import" class="custom-file-input" id="import">
+                                        <label class="custom-file-label" for="customFile">Choose file</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Import</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div><!-- .Add Modal-Content -->
+@endsection

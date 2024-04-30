@@ -19,6 +19,7 @@ return new class extends Migration
             $table->id();
             $table->string('product_name');
             $table->text('product_description')->nullable();
+            $table->decimal('price', total: 8, places: 2);
             $table->foreignIdFor(Categories::class);
             $table->timestamp('date_created');
         });

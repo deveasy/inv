@@ -172,7 +172,7 @@
                 </div>
                 <!-- main header @e -->
                 <!-- content @s -->
-                {{ $slot }}
+                @yield('content')
                 <!-- content @e -->
                 <!-- footer @s -->
                 <div class="nk-footer">
@@ -347,6 +347,7 @@
             </div><!-- .modal-content -->
         </div><!-- .modla-dialog -->
     </div><!-- .modal -->
+    @yield('modal')
     <!-- JavaScript -->
     <script src="./assets/js/bundle.js?ver=2.9.1"></script>
     <script src="./assets/js/scripts.js?ver=2.9.1"></script>

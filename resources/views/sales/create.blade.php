@@ -34,7 +34,7 @@
                                             <div class="row g-3">
                                                 <div class="col-12">
                                                     <div class="form-group mt-2">
-                                                        <button type="submit" class="btn btn-lg btn-primary">Add New Category</button>
+                                                        <button type="submit" class="btn btn-lg btn-primary">Search</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -49,60 +49,14 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach($products as $product)
                                                 <tr>
                                                     <th scope="row">1</th>
-                                                    <td>Milo</td>
-                                                    <td>200.00</td>
+                                                    <td>{{ $product->product_name }}</td>
+                                                    <td>{{ $product->price }}</td>
                                                     <td>200</td>
                                                 </tr>
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td>Nido</td>
-                                                    <td>50.00</td>
-                                                    <td>250</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>Cowbell</td>
-                                                    <td>10.00</td>
-                                                    <td>250</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">4</th>
-                                                    <td>Carnation Milk</td>
-                                                    <td>150.00</td>
-                                                    <td>100</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">5</th>
-                                                    <td>Ideal Milk</td>
-                                                    <td>1000.00</td>
-                                                    <td>99</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">6</th>
-                                                    <td>Sugar 100g</td>
-                                                    <td>210.00</td>
-                                                    <td>120</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">7</th>
-                                                    <td>Choco Milo</td>
-                                                    <td>15.00</td>
-                                                    <td>350</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">8</th>
-                                                    <td>Yazz Powder</td>
-                                                    <td>10.00</td>
-                                                    <td>400</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">9</th>
-                                                    <td>OMO</td>
-                                                    <td>500.00</td>
-                                                    <td>350</td>
-                                                </tr>
+                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div><!-- .card-inner -->

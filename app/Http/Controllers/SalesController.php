@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Sales;
+use App\Models\Products;
 use Illuminate\Http\Request;
 
 class SalesController extends Controller
@@ -15,7 +16,8 @@ class SalesController extends Controller
 
     public function create()
     {
-        return view('sales.create');
+        $products = Products::paginate(10);
+        return view('sales.create', compact('products'));
     }
 
     public function store(Request $request)

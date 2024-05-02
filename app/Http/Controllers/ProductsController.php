@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Products;
+use App\Models\Categories;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
@@ -69,6 +70,23 @@ class ProductsController extends Controller
     }
 
     public function categories(){
-        return view('products.categories');
+        $categories = Categories::paginate(10);
+        return view('products.categories', compact('categories'));
+    }
+
+    public function addCategory(Request $request){
+        $category = new Categories();
+
+        $category->category_name = $request->input('categoryName');
+        $category->category_description = $request->input('categoryDescription');
+        $category->parent_category = $request->input('parentCategory');
+
+        $category->save();
+
+        return redirect()->route('products.categories');
+    }
+
+    public function updateCategory(Request $request){
+        
     }
 }

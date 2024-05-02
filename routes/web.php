@@ -50,6 +50,7 @@ Route::middleware('auth')->group(function () {
         Route::put('/products/{product}', 'update')->name('products.update');
         Route::delete('/products/{product}', 'destroy')->name('products.destroy');
         Route::get('/products/categories', 'categories')->name('products.categories');
+        Route::post('/products/addCategory', 'addCategory')->name('products.addCategory');
     });
     
     Route::controller(SuppliersController::class)->group(function() {

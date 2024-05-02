@@ -47,10 +47,10 @@
                                                 </div>
                                                 <div class="nk-tb-col"><span class="sub-text">Name</span></div>
                                                 <div class="nk-tb-col tb-col-xxl"><span class="sub-text">Description</span></div>
-                                                <div class="nk-tb-col tb-col-sm"><span class="sub-text">Slug</span></div>
                                                 <div class="nk-tb-col"><span class="sub-text">Count</span></div>
                                                 <div class="nk-tb-col nk-tb-col-tools text-right"></div>
                                             </div><!-- .nk-tb-item -->
+                                            @foreach($categories as $category)
                                             <div class="nk-tb-item">
                                                 <div class="nk-tb-col nk-tb-col-check">
                                                     <div class="custom-control custom-control-sm custom-checkbox notext">
@@ -59,15 +59,12 @@
                                                     </div>
                                                 </div>
                                                 <div class="nk-tb-col">
-                                                    <span>Uncategorized</span>
+                                                    <span>{{ $category->category_name }}</span>
                                                 </div>
                                                 <div class="nk-tb-col tb-col-xxl">
                                                     <div class="text-ellipsis w-max-200px">
-                                                        <span>—</span>
+                                                        <span>{{ $category->category_description }}</span>
                                                     </div>
-                                                </div>
-                                                <div class="nk-tb-col tb-col-sm">
-                                                    <span>uncategorized</span>
                                                 </div>
                                                 <div class="nk-tb-col">
                                                     <div>
@@ -100,104 +97,7 @@
                                                     </ul>
                                                 </div>
                                             </div><!-- .nk-tb-item -->
-                                            <div class="nk-tb-item">
-                                                <div class="nk-tb-col nk-tb-col-check">
-                                                    <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                        <input type="checkbox" class="custom-control-input" id="uid2">
-                                                        <label class="custom-control-label" for="uid2"></label>
-                                                    </div>
-                                                </div>
-                                                <div class="nk-tb-col">
-                                                    <span>SEO</span>
-                                                </div>
-                                                <div class="nk-tb-col tb-col-xxl">
-                                                    <div class="text-ellipsis w-max-200px">
-                                                        <span>Category description is a paragraph or two of content on the page representing an entire category of items for sale</span>
-                                                    </div>
-                                                </div>
-                                                <div class="nk-tb-col tb-col-sm">
-                                                    <span>seo</span>
-                                                </div>
-                                                <div class="nk-tb-col">
-                                                    <div>
-                                                        <span>2</span>
-                                                    </div>
-                                                </div>
-                                                <div class="nk-tb-col nk-tb-col-tools">
-                                                    <ul class="nk-tb-actions gx-1">
-                                                        <li class="nk-tb-action-hidden">
-                                                            <a href="#" class="btn btn-trigger btn-icon" data-toggle="modal" data-target="#editCategory" data-placement="top" title="Edit">
-                                                                <em class="icon ni ni-edit-fill"></em>
-                                                            </a>
-                                                        </li>
-                                                        <li class="nk-tb-action-hidden">
-                                                            <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="Move To Trash">
-                                                                <em class="icon ni ni-trash-fill"></em>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <div class="drodown">
-                                                                <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                                <div class="dropdown-menu dropdown-menu-right">
-                                                                    <ul class="link-list-opt no-bdr">
-                                                                        <li><a href="#" data-toggle="modal" data-target="#editCategory"><em class="icon ni ni-edit-fill"></em><span>Edit Category</span></a></li>
-                                                                        <li><a href="#"><em class="icon ni ni-trash-fill"></em><span>Trash</span></a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div><!-- .nk-tb-item -->
-                                            <div class="nk-tb-item">
-                                                <div class="nk-tb-col nk-tb-col-check">
-                                                    <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                        <input type="checkbox" class="custom-control-input" id="uid3">
-                                                        <label class="custom-control-label" for="uid3"></label>
-                                                    </div>
-                                                </div>
-                                                <div class="nk-tb-col">
-                                                    <span>Covid</span>
-                                                </div>
-                                                <div class="nk-tb-col tb-col-xxl">
-                                                    <div class="text-ellipsis w-max-200px">
-                                                        <span>—</span>
-                                                    </div>
-                                                </div>
-                                                <div class="nk-tb-col tb-col-sm">
-                                                    <span>covid</span>
-                                                </div>
-                                                <div class="nk-tb-col">
-                                                    <div>
-                                                        <span>1</span>
-                                                    </div>
-                                                </div>
-                                                <div class="nk-tb-col nk-tb-col-tools">
-                                                    <ul class="nk-tb-actions gx-1">
-                                                        <li class="nk-tb-action-hidden">
-                                                            <a href="#" class="btn btn-trigger btn-icon" data-toggle="modal" data-target="#editCategory" data-placement="top" title="Edit">
-                                                                <em class="icon ni ni-edit-fill"></em>
-                                                            </a>
-                                                        </li>
-                                                        <li class="nk-tb-action-hidden">
-                                                            <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="Move To Trash">
-                                                                <em class="icon ni ni-trash-fill"></em>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <div class="drodown">
-                                                                <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                                <div class="dropdown-menu dropdown-menu-right">
-                                                                    <ul class="link-list-opt no-bdr">
-                                                                        <li><a href="#" data-toggle="modal" data-target="#editCategory"><em class="icon ni ni-edit-fill"></em><span>Edit Category</span></a></li>
-                                                                        <li><a href="#"><em class="icon ni ni-trash-fill"></em><span>Trash</span></a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div><!-- .nk-tb-item -->
+                                            @endforeach
                                         </div><!-- .nk-tb-list -->
                                     </div><!-- .card-inner -->
                                     <div class="card-inner">
@@ -250,7 +150,8 @@
                         <div class="col-xxl-5">
                             <div class="card card-bordered h-100">
                                 <div class="card-inner">
-                                    <form action="#">
+                                    <form action="{{ route('products.addCategory') }}" method="POST">
+                                    @csrf
                                         <div class="row g-3 align-center">
                                             <div class="col-md-6">
                                                 <div class="form-group">
@@ -261,22 +162,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <div class="form-control-wrap">
-                                                        <input type="text" class="form-control" id="name" placeholder="Name">
-                                                    </div>
-                                                </div>
-                                            </div><!-- col -->
-                                        </div><!-- .row -->
-                                        <div class="row g-3 align-center">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="form-label" for="slug">Slug</label>
-                                                    <span class="form-note">The “slug” is URL-friendly version of the name.</span>
-                                                </div>
-                                            </div><!-- .col -->
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <div class="form-control-wrap">
-                                                        <input type="text" class="form-control" id="slug" placeholder="Slug">
+                                                        <input type="text" class="form-control" name="categoryName" id="categoryName" placeholder="Name">
                                                     </div>
                                                 </div>
                                             </div><!-- col -->
@@ -290,12 +176,11 @@
                                             </div><!-- .col -->
                                             <div class="col-md-6">
                                                 <div class="form-control-wrap">
-                                                    <select class="form-select" data-placeholder="Parent Category">
-                                                        <option value="default">None</option>
-                                                        <option value="uncategorized">Uncategorized</option>
-                                                        <option value="covid">Covid</option>
-                                                        <option value="seo">SEO</option>
-                                                        <option value="website">Website</option>
+                                                    <select class="form-select" name="parentCategory" data-placeholder="Parent Category">
+                                                        <option value="0">None</option>
+                                                        @foreach($categories as $category)
+                                                        <option value="{{ $category->id }}">{{ $category->category_name}}</option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                             </div><!-- col -->
@@ -309,14 +194,14 @@
                                             </div><!-- .col -->
                                             <div class="col-md-6">
                                                 <div class="form-control-wrap">
-                                                    <textarea class="form-control form-control-sm no-resize" id="addDescription" placeholder="Write your description"></textarea>
+                                                    <textarea class="form-control form-control-sm no-resize" name="categoryDescription" id="categoryDescription" placeholder="Write your description"></textarea>
                                                 </div>
                                             </div><!-- col -->
                                         </div><!-- .row -->
                                         <div class="row g-3">
                                             <div class="col-12">
                                                 <div class="form-group mt-2">
-                                                    <button type="submit" class="btn btn-lg btn-primary">Add New Category</button>
+                                                    <button type="submit" class="btn btn-lg btn-primary">Add Category</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -330,4 +215,57 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('modal')
+<!-- Edit Category-->
+<div class="modal fade" tabindex="-1" role="dialog" id="editCategory">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <a href="#" class="close" data-dismiss="modal"><em class="icon ni ni-cross-sm"></em></a>
+            <div class="modal-body modal-body-md">
+                <h5 class="modal-title">Edit Categories</h5>
+                <form action="#" class="mt-4">
+                    <div class="row g-gs">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label" for="editName">Category Name</label>
+                                <input type="text" class="form-control" id="editName" placeholder="Name" value="Uncategorized">
+                            </div>
+                        </div><!-- .col -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label" for="editSlug">Parent Category</label>
+                                <div class="form-control-wrap">
+                                    <select class="form-select" name="parentCategory" data-placeholder="Parent Category">
+                                        <option value="0">None</option>
+                                        @foreach($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->category_name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                        </div><!-- .col -->
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label class="form-label" for="editDescription">Category Description</label>
+                                <textarea class="form-control form-control-sm no-resize" id="editDescription" placeholder="Edit your description"></textarea>
+                            </div>
+                        </div><!-- .col -->
+                        <div class="col-12">
+                            <ul class="align-center flex-wrap flex-sm-nowrap gx-4 gy-2">
+                                <li>
+                                    <button type="submit" data-dismiss="modal" class="btn btn-primary">Update</button>
+                                </li>
+                                <li>
+                                    <a href="#" class="link link-light" data-dismiss="modal">Cancel</a>
+                                </li>
+                            </ul>
+                        </div><!-- .col -->
+                    </div>
+                </form>
+            </div><!-- .modal-body -->
+        </div><!-- .modal-content -->
+    </div><!-- .modal-dialog -->
+</div><!-- .modal -->
 @endsection

@@ -9,7 +9,10 @@ class Categories extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['id', 'customer_id', 'order_date', 'status'];
+    protected $fillable = ['category_name', 'category_description', 'parent_category'];
+
+    // Disable automatic timestamps
+    public $timestamps = false;
     
     public function customer()
     {

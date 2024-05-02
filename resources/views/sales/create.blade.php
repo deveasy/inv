@@ -25,19 +25,11 @@
                                                             <div class="form-icon form-icon-right">
                                                                 <em class="icon ni ni-search"></em>
                                                             </div>
-                                                            <input type="text" class="form-control form-control-lg" id="name" placeholder="Search or scan for an item">
+                                                            <input type="text" class="form-control form-control-lg" id="searchInput" placeholder="Search or scan for an item">
                                                         </div>
                                                     </div>
                                                 </div><!-- col -->
                                             </div><!-- .row -->
-                                            
-                                            <div class="row g-3">
-                                                <div class="col-12">
-                                                    <div class="form-group mt-2">
-                                                        <button type="submit" class="btn btn-lg btn-primary">Search</button>
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </form><!-- form -->
                                         <table class="table table-striped">
                                             <thead>
@@ -48,7 +40,7 @@
                                                     <th scope="col">In Stock</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
+                                            <tbody id="productList">
                                                 @foreach($products as $product)
                                                 <tr>
                                                     <th scope="row">1</th>
@@ -203,10 +195,10 @@
                                         <div class="card-inner">
                                             
                                             <div class="card text-white bg-primary">
-                                                <div class="card-header">Header</div>
+                                                <!--<div class="card-header">Header</div>-->
                                                 <div class="card-inner">
                                                     <div class="nk-block-between-md g-3">
-                                                        <div class="g">
+                                                        <!--<div class="g">
                                                             <ul class="pagination justify-content-center justify-content-md-start">
                                                                 <li class="page-item"><a class="page-link" href="#">Prev</a></li>
                                                                 <li class="page-item"><a class="page-link" href="#">1</a></li>
@@ -215,8 +207,8 @@
                                                                 <li class="page-item"><a class="page-link" href="#">6</a></li>
                                                                 <li class="page-item"><a class="page-link" href="#">7</a></li>
                                                                 <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                                                            </ul><!-- .pagination -->
-                                                        </div>
+                                                            </ul><!-- .pagination 
+                                                        </div>-->
                                                         <div class="g">
                                                             <div class="form-control-wrap">
                                                                 <div class="input-group">

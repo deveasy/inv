@@ -16,7 +16,7 @@ class SalesController extends Controller
 
     public function create()
     {
-        $products = Products::paginate(10);
+        $products = Products::paginate(15);
         return view('sales.create', compact('products'));
     }
 
@@ -41,5 +41,13 @@ class SalesController extends Controller
     {
         $product->delete();
         return redirect()->route('sales.index');
+    }
+
+    public function search(Request $request){
+        $searchTerm = $request->input('searchTerm');
+
+        $products = Products::where('product_name','like','%'.$searchTerm.'%')->get();
+
+        return response()->json($products);
     }
 }

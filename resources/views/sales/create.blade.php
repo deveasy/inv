@@ -25,7 +25,7 @@
                                                             <div class="form-icon form-icon-right">
                                                                 <em class="icon ni ni-search"></em>
                                                             </div>
-                                                            <input type="text" class="form-control form-control-lg" id="searchInput" placeholder="Search or scan for an item">
+                                                            <input type="text" class="form-control form-control-lg" name="searchTerm" id="searchInput" placeholder="Search or scan for an item">
                                                         </div>
                                                     </div>
                                                 </div><!-- col -->
@@ -41,13 +41,17 @@
                                                 </tr>
                                             </thead>
                                             <tbody id="productList">
+                                                @php
+                                                    $n = 1;
+                                                @endphp
                                                 @foreach($products as $product)
                                                 <tr>
-                                                    <th scope="row">1</th>
+                                                    <th scope="row">@php echo $n; @endphp</th>
                                                     <td>{{ $product->product_name }}</td>
                                                     <td>{{ $product->price }}</td>
                                                     <td>200</td>
                                                 </tr>
+                                                @php $n++ @endphp
                                                 @endforeach
                                             </tbody>
                                         </table>
@@ -232,4 +236,7 @@
             </div>
         </div>
     </div>
+@endsection
+@section('scripts')
+<script src="./js/inv.js"></script>
 @endsection

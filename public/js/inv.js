@@ -1,0 +1,99 @@
+function searchProducts(searchTerm) {
+    // Send an AJAX request to search for products
+    $.ajax({
+        type: "GET",
+        url: "/sales/search",
+        data: {
+            searchTerm: searchTerm,
+            _token: '{{ csrf_token() }}'
+        },
+        success: function(response) {
+            // Update the product list display with search results
+            //$('#productList').html('<p>This is working.</p>');
+            displaySearchProducts(response);
+        },
+        error: function(xhr, status, error) {
+            console.error("Error searching for products:", error);
+        }
+    });
+}
+
+function displaySearchProducts(products){
+    // var productList = $('#productList');
+    // productList.empty(); //clear previous products
+
+    //Iterate throught the search results and append them to the product list
+    $.each(products.data, function(index, product){
+        console.log("Index: " + index + ", Product: " + product);
+        // var productHtml = `
+        //     <tr>
+        //         <th scope="row">1</th>
+        //         <td>the name</td>
+        //         <td>this price </td>
+        //         <td>200</td>
+        //     </tr>
+        // `;
+        // productList.append(productHtml);
+    });
+}
+
+$(document).ready(function() {
+    // Trigger search when the search input value changes
+    $('#searchInput').on('input', function() {
+        const searchTerm = $(this).val();
+        searchProducts(searchTerm);
+    });
+});
+
+function addToCart(productId) {
+    // Send an AJAX request to add the product to the cart
+    $.ajax({
+        type: "POST",
+        url: "{{ route('cart.add') }}",
+        data: {
+            productId: productId,
+            _token: '{{ csrf_token() }}'
+        },
+        success: function(response) {
+            // Update the cart display or perform any other action
+            console.log("Product added to cart successfully.");
+        },
+        error: function(xhr, status, error) {
+            console.error("Error adding product to cart:", error);
+        }
+    });
+}
+
+function removeFromCart(cartItemId) {
+    // Send an AJAX request to remove the item from the cart
+    $.ajax({
+        type: "POST",
+        url: "{{ route('cart.remove') }}",
+        data: {
+            cartItemId: cartItemId,
+            _token: '{{ csrf_token() }}'
+        },
+        success: function(response) {
+            // Update the cart display or perform any other action
+            console.log("Product removed from cart successfully.");
+        },
+        error: function(xhr, status, error) {
+            console.error("Error removing product from cart:", error);
+        }
+    });
+}
+
+function calculateTotalPrice() {
+    let totalPrice = 0;
+    $('.cart-item').each(function() {
+        const price = parseFloat($(this).find('.price').text().replace('$', ''));
+        const quantity = parseInt($(this).find('.quantity').text());
+        totalPrice += price * quantity;
+    });
+    $('#totalPrice').text('$' + totalPrice.toFixed(2));
+}
+
+// Call the calculateTotalPrice function whenever the page loads or the cart is modified
+$(document).ready(function() {
+    calculateTotalPrice();
+});

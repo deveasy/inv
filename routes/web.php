@@ -39,6 +39,7 @@ Route::middleware('auth')->group(function () {
         Route::put('/sales/{sale}', 'update')->name('sales.update');
         Route::delete('/sales/{sale}', 'destroy')->name('sales.destroy');
         Route::delete('/sales', 'returns')->name('sales.returns');
+        Route::get('/sales/search', 'search')->name('sales.search');
     });
     
     Route::controller(ProductsController::class)->group(function() {

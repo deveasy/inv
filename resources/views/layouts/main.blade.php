@@ -355,6 +355,7 @@
     <link rel="stylesheet" href="./assets/css/editors/summernote.css?ver=2.9.1">
     <script src="./assets/js/libs/editors/summernote.js?ver=2.9.1"></script>
     <script src="./assets/js/editors.js?ver=2.9.1"></script>
+    @yield('scripts')
 </body>
 
 </html>

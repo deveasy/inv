@@ -9,7 +9,6 @@ function searchProducts(searchTerm) {
         },
         success: function(response) {
             // Update the product list display with search results
-            //$('#productList').html('<p>This is working.</p>');
             displaySearchProducts(response);
         },
         error: function(xhr, status, error) {
@@ -19,21 +18,22 @@ function searchProducts(searchTerm) {
 }
 
 function displaySearchProducts(products){
-    // var productList = $('#productList');
-    // productList.empty(); //clear previous products
+    var productList = $('#productList');
+    productList.empty(); //clear previous products
+    var count = 1;
 
     //Iterate throught the search results and append them to the product list
-    $.each(products.data, function(index, product){
-        console.log("Index: " + index + ", Product: " + product);
-        // var productHtml = `
-        //     <tr>
-        //         <th scope="row">1</th>
-        //         <td>the name</td>
-        //         <td>this price </td>
-        //         <td>200</td>
-        //     </tr>
-        // `;
-        // productList.append(productHtml);
+    $.each(products, function(index, product){
+        var productHtml = `
+            <tr>
+                <th scope="row">${count}</th>
+                <td>${product.product_name}</td>
+                <td>${product.price}</td>
+                <td>200</td>
+            </tr>
+        `;
+        count++;
+        productList.append(productHtml);
     });
 }
 

@@ -31,7 +31,7 @@
                                                 </div><!-- col -->
                                             </div><!-- .row -->
                                         </form><!-- form -->
-                                        <table class="table table-striped">
+                                        <table class="table table-striped" id="productTable">
                                             <thead>
                                                 <tr>
                                                     <th scope="col">#</th>
@@ -45,12 +45,12 @@
                                                     $n = 1;
                                                 @endphp
                                                 @foreach($products as $product)
-                                                <tr>
-                                                    <th scope="row">@php echo $n; @endphp</th>
-                                                    <td>{{ $product->product_name }}</td>
-                                                    <td>{{ $product->price }}</td>
-                                                    <td>200</td>
-                                                </tr>
+                                                    <tr class="bg-dark-subtle">
+                                                        <th scope="row">@php echo $n; @endphp</th>
+                                                        <td>{{ $product->product_name }}</td>
+                                                        <td>{{ $product->price }}</td>
+                                                        <td>200</td>
+                                                    </tr>
                                                 @php $n++ @endphp
                                                 @endforeach
                                             </tbody>

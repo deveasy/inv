@@ -46,7 +46,7 @@ class SalesController extends Controller
     public function search(Request $request){
         $searchTerm = $request->input('searchTerm');
 
-        $products = Products::where('product_name','like','%'.$searchTerm.'%')->get();
+        $products = Products::where('product_name','like','%'.$searchTerm.'%')->take(15)->get();
 
         return response()->json($products);
     }

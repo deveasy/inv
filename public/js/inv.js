@@ -45,6 +45,33 @@ $(document).ready(function() {
     });
 });
 
+$(document).ready(function(){
+    var selectedRow = null;
+
+    //hilight the initially selected row
+    $('#productTable tr:first').addClass('bg-dark-subtle');
+
+    //function to handle arrow key navigation
+    $(document).keydown(function(e){
+        if(e.keyCode === 38 || e.keyCode === 40){ //up or down arrow key
+            e.preventDefault(); //prevent page scroll
+
+            var rows = $('#productTable tr');
+            var currentIndex = rows.index(selectedRow);
+            var nextIndex = currentIndex + (e.keyCode === 38 ? -1 : 1);
+
+            if(nextIndex >= 0 && nextIndex < rows.length){
+                $(selectedRow).removeClass('bg-dark-subtle');
+                selectedRow = rows[nextIndex];
+                $(selectedRow).addClass('bg-dark-subtle');
+            }
+        }
+        else if(e.keyCode === 13 ){ //Enter key
+            alert('Selected: ' + $(selectedRow).text());
+        }
+    });
+});
+
 function addToCart(productId) {
     // Send an AJAX request to add the product to the cart
     $.ajax({

@@ -25,10 +25,10 @@ function displaySearchProducts(products){
     //Iterate throught the search results and append them to the product list
     $.each(products, function(index, product){
         var productHtml = `
-            <tr>
+            <tr id="${product.id}">
                 <th scope="row">${count}</th>
-                <td>${product.product_name}</td>
-                <td>${product.price}</td>
+                <td class="productName">${product.product_name}</td>
+                <td class="productPrice">${product.price}</td>
                 <td>200</td>
             </tr>
         `;
@@ -38,6 +38,7 @@ function displaySearchProducts(products){
 }
 
 $(document).ready(function() {
+    $('#searchInput').focus();
     // Trigger search when the search input value changes
     $('#searchInput').on('input', function() {
         const searchTerm = $(this).val();
@@ -47,27 +48,36 @@ $(document).ready(function() {
 
 $(document).ready(function(){
     var selectedRow = null;
+    var productId = null;
+    var productName = null;
+    var productPrice = null;
 
     //hilight the initially selected row
-    $('#productTable tr:first').addClass('bg-dark-subtle');
+    $('#productList tr:first').addClass('bg-light');
 
     //function to handle arrow key navigation
     $(document).keydown(function(e){
         if(e.keyCode === 38 || e.keyCode === 40){ //up or down arrow key
             e.preventDefault(); //prevent page scroll
 
-            var rows = $('#productTable tr');
+            var rows = $('#productList tr');
             var currentIndex = rows.index(selectedRow);
             var nextIndex = currentIndex + (e.keyCode === 38 ? -1 : 1);
 
             if(nextIndex >= 0 && nextIndex < rows.length){
-                $(selectedRow).removeClass('bg-dark-subtle');
+                $('#productList tr:first').removeClass('bg-light');
+                $(selectedRow).removeClass('bg-light');
                 selectedRow = rows[nextIndex];
-                $(selectedRow).addClass('bg-dark-subtle');
+                $(selectedRow).addClass('bg-light');
             }
         }
         else if(e.keyCode === 13 ){ //Enter key
-            alert('Selected: ' + $(selectedRow).text());
+            // alert('Selected: ' + $(selectedRow).html());
+            productName = $(selectedRow).find('.productName').text();
+            productPrice = $(selectedRow).find('.productPrice').text();
+            productId = $(selectedRow).attr('id');
+            // alert(productName + productPrice + productId);
+            addItemToCart(productId, productName, productPrice);
         }
     });
 });
@@ -89,6 +99,49 @@ function addToCart(productId) {
             console.error("Error adding product to cart:", error);
         }
     });
+}
+
+function addItemToCart(productId, productName, productPrice){
+    var cartList = $('#cartItems');
+
+    var itemHtml = `
+        <div class="nk-tb-item" id="${productId}">
+            <div class="nk-tb-col tb-col-xxl">
+                <span>${productName}</span>
+            </div>
+            <div class="nk-tb-col tb-col-sm">
+                <div class="form-control-wrap number-spinner-wrap">
+                    <button class="btn btn-icon btn-outline-light number-spinner-btn number-minus" data-number="minus"><em class="icon ni ni-minus"></em></button>
+                    <input type="number" class="form-control number-spinner" value="1">
+                    <button class="btn btn-icon btn-outline-light number-spinner-btn number-plus" data-number="plus"><em class="icon ni ni-plus"></em></button>
+                </div>
+            </div>
+            <div class="nk-tb-col tb-col-sm">
+                <span>${productPrice}</span>
+            </div>
+            <div class="nk-tb-col">
+                <div>
+                    <input type="text" class="form-control-plaintext total" value="${parseFloat(productPrice) * parseInt($(productId).closest('input').val())}">
+                </div>
+            </div>
+            <div class="nk-tb-col nk-tb-col-tools">
+                <ul class="nk-tb-actions gx-1">
+                    <li>
+                        <div class="drodown">
+                            <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <ul class="link-list-opt no-bdr">
+                                    <li><a href="#" data-toggle="modal" data-target="#editCategory"><em class="icon ni ni-edit-fill"></em><span>Edit Category</span></a></li>
+                                    <li><a href="#"><em class="icon ni ni-trash-fill"></em><span>Trash</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div><!-- .nk-tb-item -->
+    `;
+    cartList.append(itemHtml);
 }
 
 function removeFromCart(cartItemId) {

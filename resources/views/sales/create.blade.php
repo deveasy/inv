@@ -45,11 +45,11 @@
                                                     $n = 1;
                                                 @endphp
                                                 @foreach($products as $product)
-                                                    <tr class="bg-dark-subtle">
-                                                        <th scope="row">@php echo $n; @endphp</th>
-                                                        <td>{{ $product->product_name }}</td>
-                                                        <td>{{ $product->price }}</td>
-                                                        <td>200</td>
+                                                    <tr id="{{ $product->id }}">
+                                                        <td scope="row">@php echo $n; @endphp</th>
+                                                        <td class="productName">{{ $product->product_name }}</td>
+                                                        <td class="productPrice">{{ $product->price }}</td>
+                                                        <td class="productStock">200</td>
                                                     </tr>
                                                 @php $n++ @endphp
                                                 @endforeach
@@ -81,7 +81,7 @@
                                             </div><!-- .card-title-group -->
                                         </div><!-- .card-inner -->
                                         <div class="card-inner p-0">
-                                            <div class="nk-tb-list nk-tb-ulist">
+                                            <div class="nk-tb-list nk-tb-ulist" id="cartItems">
                                                 <div class="nk-tb-item nk-tb-head">
                                                     <div class="nk-tb-col tb-col-xxl item"><span class="sub-text">Item</span></div>
                                                     <div class="nk-tb-col tb-col-sm qty"><span class="sub-text">Qty</span></div>
@@ -89,111 +89,9 @@
                                                     <div class="nk-tb-col total"><span class="sub-text">Total</span></div>
                                                     <div class="nk-tb-col nk-tb-col-tools text-right"></div>
                                                 </div><!-- .nk-tb-item -->
-                                                <div class="nk-tb-item">
-                                                    <div class="nk-tb-col tb-col-xxl">
-                                                        <span>Laptop</span>
-                                                    </div>
-                                                    <div class="nk-tb-col tb-col-sm">
-                                                        <div class="form-control-wrap number-spinner-wrap">
-                                                            <button class="btn btn-icon btn-outline-light number-spinner-btn number-minus" data-number="minus"><em class="icon ni ni-minus"></em></button>
-                                                            <input type="number" class="form-control number-spinner" value="0">
-                                                            <button class="btn btn-icon btn-outline-light number-spinner-btn number-plus" data-number="plus"><em class="icon ni ni-plus"></em></button>
-                                                        </div>
-                                                    </div>
-                                                    <div class="nk-tb-col tb-col-sm">
-                                                        <span>2.00</span>
-                                                    </div>
-                                                    <div class="nk-tb-col">
-                                                        <div>
-                                                            <input type="text" class="form-control-plaintext" value="200.00">
-                                                        </div>
-                                                    </div>
-                                                    <div class="nk-tb-col nk-tb-col-tools">
-                                                        <ul class="nk-tb-actions gx-1">
-                                                            <li>
-                                                                <div class="drodown">
-                                                                    <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                                    <div class="dropdown-menu dropdown-menu-right">
-                                                                        <ul class="link-list-opt no-bdr">
-                                                                            <li><a href="#" data-toggle="modal" data-target="#editCategory"><em class="icon ni ni-edit-fill"></em><span>Edit Category</span></a></li>
-                                                                            <li><a href="#"><em class="icon ni ni-trash-fill"></em><span>Trash</span></a></li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div><!-- .nk-tb-item -->
-                                                <div class="nk-tb-item">
-                                                    <div class="nk-tb-col tb-col-xxl">
-                                                        <span>Laptop</span>
-                                                    </div>
-                                                    <div class="nk-tb-col tb-col-sm">
-                                                        <div class="form-control-wrap number-spinner-wrap">
-                                                            <button class="btn btn-icon btn-outline-light number-spinner-btn number-minus" data-number="minus"><em class="icon ni ni-minus"></em></button>
-                                                            <input type="number" class="form-control number-spinner" value="0">
-                                                            <button class="btn btn-icon btn-outline-light number-spinner-btn number-plus" data-number="plus"><em class="icon ni ni-plus"></em></button>
-                                                        </div>
-                                                    </div>
-                                                    <div class="nk-tb-col tb-col-sm">
-                                                        <span>100.00</span>
-                                                    </div>
-                                                    <div class="nk-tb-col">
-                                                        <div>
-                                                            <input type="text" class="form-control-plaintext" value="200.00">
-                                                        </div>
-                                                    </div>
-                                                    <div class="nk-tb-col nk-tb-col-tools">
-                                                        <ul class="nk-tb-actions gx-1">
-                                                            <li>
-                                                                <div class="drodown">
-                                                                    <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                                    <div class="dropdown-menu dropdown-menu-right">
-                                                                        <ul class="link-list-opt no-bdr">
-                                                                            <li><a href="#" data-toggle="modal" data-target="#editCategory"><em class="icon ni ni-edit-fill"></em><span>Edit Category</span></a></li>
-                                                                            <li><a href="#"><em class="icon ni ni-trash-fill"></em><span>Trash</span></a></li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div><!-- .nk-tb-item -->
-                                                <div class="nk-tb-item">
-                                                    <div class="nk-tb-col tb-col-xxl">
-                                                        <span>Laptop</span>
-                                                    </div>
-                                                    <div class="nk-tb-col tb-col-sm">
-                                                        <div class="form-control-wrap number-spinner-wrap">
-                                                            <button class="btn btn-icon btn-outline-light number-spinner-btn number-minus" data-number="minus"><em class="icon ni ni-minus"></em></button>
-                                                            <input type="number" class="form-control number-spinner" value="0">
-                                                            <button class="btn btn-icon btn-outline-light number-spinner-btn number-plus" data-number="plus"><em class="icon ni ni-plus"></em></button>
-                                                        </div>
-                                                    </div>
-                                                    <div class="nk-tb-col tb-col-sm">
-                                                        <span>2500.00</span>
-                                                    </div>
-                                                    <div class="nk-tb-col">
-                                                        <div>
-                                                            <input type="text" class="form-control-plaintext" value="200.00">
-                                                        </div>
-                                                    </div>
-                                                    <div class="nk-tb-col nk-tb-col-tools">
-                                                        <ul class="nk-tb-actions gx-1">
-                                                            <li>
-                                                                <div class="drodown">
-                                                                    <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                                    <div class="dropdown-menu dropdown-menu-right">
-                                                                        <ul class="link-list-opt no-bdr">
-                                                                            <li><a href="#" data-toggle="modal" data-target="#editCategory"><em class="icon ni ni-edit-fill"></em><span>Edit Category</span></a></li>
-                                                                            <li><a href="#"><em class="icon ni ni-trash-fill"></em><span>Trash</span></a></li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div><!-- .nk-tb-item -->
+                                                
+                                                <!-- Cart Items go here -->
+                                                
                                             </div><!-- .nk-tb-list -->
                                         </div><!-- .card-inner -->
                                         <div class="card-inner">

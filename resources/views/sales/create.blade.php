@@ -17,20 +17,18 @@
                             <div class="col-xxl-6">
                                 <div class="card card-bordered h-100">
                                     <div class="card-inner">
-                                        <form action="#">
-                                            <div class="row g-3 align-center">
-                                                <div class="col-12">
-                                                    <div class="form-group">
-                                                        <div class="form-control-wrap">
-                                                            <div class="form-icon form-icon-right">
-                                                                <em class="icon ni ni-search"></em>
-                                                            </div>
-                                                            <input type="text" class="form-control form-control-lg" name="searchTerm" id="searchInput" placeholder="Search or scan for an item">
+                                        <div class="row g-3 align-center">
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <div class="form-control-wrap">
+                                                        <div class="form-icon form-icon-right">
+                                                            <em class="icon ni ni-search"></em>
                                                         </div>
+                                                        <input type="text" class="form-control form-control-lg" name="searchTerm" id="searchInput" placeholder="Search or scan for an item">
                                                     </div>
-                                                </div><!-- col -->
-                                            </div><!-- .row -->
-                                        </form><!-- form -->
+                                                </div>
+                                            </div><!-- col -->
+                                        </div><!-- .row -->
                                         <table class="table table-striped" id="productTable">
                                             <thead>
                                                 <tr>

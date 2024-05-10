@@ -1,3 +1,5 @@
+const cartItems = {};
+
 function searchProducts(searchTerm) {
     // Send an AJAX request to search for products
     $.ajax({
@@ -121,7 +123,7 @@ function addItemToCart(productId, productName, productPrice){
             </div>
             <div class="nk-tb-col">
                 <div>
-                    <input type="text" class="form-control-plaintext total" value="${parseFloat(productPrice) * parseInt($(productId).closest('input').val())}">
+                    <input type="text" class="form-control-plaintext total" value="${parseFloat(productPrice) * parseInt($(cartList).find('.quantity').val())}">
                 </div>
             </div>
             <div class="nk-tb-col nk-tb-col-tools">

@@ -1,5 +1,7 @@
 const cartItems = {};
 
+var products = {};
+
 function searchProducts(searchTerm) {
     // Send an AJAX request to search for products
     $.ajax({
@@ -12,11 +14,29 @@ function searchProducts(searchTerm) {
         success: function(response) {
             // Update the product list display with search results
             displaySearchProducts(response);
+            products = response;
         },
         error: function(xhr, status, error) {
             console.error("Error searching for products:", error);
         }
     });
+}
+
+function getProducts(){
+    //send an AJAX request to get products
+    $.ajax({
+        type: "GET",
+        url: "/products",
+        data: {
+            _token: '{{ csrf_token() }}'
+        },
+        success: function(response){
+            products = response;
+        },
+        error: function(xhr, status, error){
+            console.error("Error getting the products:", error);
+        }
+    })
 }
 
 function displaySearchProducts(products){
@@ -46,6 +66,7 @@ $(document).ready(function() {
         const searchTerm = $(this).val();
         searchProducts(searchTerm);
     });
+    getProducts();
 });
 
 $(document).ready(function(){
@@ -74,17 +95,23 @@ $(document).ready(function(){
             }
         }
         else if(e.keyCode === 13 ){ //Enter key
-            // alert('Selected: ' + $(selectedRow).html());
-            productName = $(selectedRow).find('.productName').text();
-            productPrice = $(selectedRow).find('.productPrice').text();
             productId = $(selectedRow).attr('id');
-            // alert(productName + productPrice + productId);
-            addItemToCart(productId, productName, productPrice);
+            addToCart(productId);
         }
     });
 });
 
+// Function to add item to cart
 function addToCart(productId) {
+    if (cartItems[productId]) {
+      cartItems[productId].quantity++;
+    } else {
+      cartItems[productId] = { product: products.find(p => p.id == productId), quantity: 1 };
+    }
+    renderCart();
+  }
+
+function addToCartAjax(productId) {
     // Send an AJAX request to add the product to the cart
     $.ajax({
         type: "POST",
@@ -103,47 +130,51 @@ function addToCart(productId) {
     });
 }
 
-function addItemToCart(productId, productName, productPrice){
+function renderCart(){
     var cartList = $('#cartItems');
+    cartList.empty();
 
-    var itemHtml = `
-        <div class="nk-tb-item" id="${productId}">
-            <div class="nk-tb-col tb-col-xxl">
-                <span>${productName}</span>
-            </div>
-            <div class="nk-tb-col tb-col-sm">
-                <div class="form-control-wrap number-spinner-wrap">
-                    <button class="btn btn-icon btn-outline-light number-spinner-btn number-minus" data-number="minus"><em class="icon ni ni-minus"></em></button>
-                    <input type="number" class="form-control number-spinner" value="1">
-                    <button class="btn btn-icon btn-outline-light number-spinner-btn number-plus" data-number="plus"><em class="icon ni ni-plus"></em></button>
+    Object.values(cartItems).forEach(item => {
+        var itemHtml = `
+            <div class="nk-tb-item" id="${item.product.id}">
+                <div class="nk-tb-col tb-col-xxl">
+                    <span>${item.product.product_name}</span>
                 </div>
-            </div>
-            <div class="nk-tb-col tb-col-sm">
-                <span>${productPrice}</span>
-            </div>
-            <div class="nk-tb-col">
-                <div>
-                    <input type="text" class="form-control-plaintext total" value="${parseFloat(productPrice) * parseInt($(cartList).find('.quantity').val())}">
+                <div class="nk-tb-col tb-col-sm">
+                    <div class="form-control-wrap number-spinner-wrap">
+                        <button class="btn btn-icon btn-outline-light number-spinner-btn number-minus" data-number="minus"><em class="icon ni ni-minus"></em></button>
+                        <input type="number" class="form-control number-spinner" value="${item.quantity}">
+                        <button class="btn btn-icon btn-outline-light number-spinner-btn number-plus" data-number="plus"><em class="icon ni ni-plus"></em></button>
+                    </div>
                 </div>
-            </div>
-            <div class="nk-tb-col nk-tb-col-tools">
-                <ul class="nk-tb-actions gx-1">
-                    <li>
-                        <div class="drodown">
-                            <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <ul class="link-list-opt no-bdr">
-                                    <li><a href="#" data-toggle="modal" data-target="#editCategory"><em class="icon ni ni-edit-fill"></em><span>Edit Category</span></a></li>
-                                    <li><a href="#"><em class="icon ni ni-trash-fill"></em><span>Trash</span></a></li>
-                                </ul>
+                <div class="nk-tb-col tb-col-sm">
+                    <span>${item.product.price}</span>
+                </div>
+                <div class="nk-tb-col">
+                    <div>
+                        <input type="text" class="form-control-plaintext total" value="${parseFloat(parseFloat(item.product.price) * parseInt(item.quantity))}">
+                    </div>
+                </div>
+                <div class="nk-tb-col nk-tb-col-tools">
+                    <ul class="nk-tb-actions gx-1">
+                        <li>
+                            <div class="drodown">
+                                <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <ul class="link-list-opt no-bdr">
+                                        <li><a href="#" data-toggle="modal" data-target="#editCategory"><em class="icon ni ni-edit-fill"></em><span>Edit Category</span></a></li>
+                                        <li><a href="#"><em class="icon ni ni-trash-fill"></em><span>Trash</span></a></li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div><!-- .nk-tb-item -->
-    `;
-    cartList.append(itemHtml);
+                        </li>
+                    </ul>
+                </div>
+            </div><!-- .nk-tb-item -->
+        `;
+        cartList.append(itemHtml);
+    });
+    
 }
 
 function removeFromCart(cartItemId) {

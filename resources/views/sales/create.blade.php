@@ -81,10 +81,10 @@
                                         <div class="card-inner p-0">
                                             <div class="nk-tb-list nk-tb-ulist" id="cartItems">
                                                 <div class="nk-tb-item nk-tb-head">
-                                                    <div class="nk-tb-col tb-col-xxl item"><span class="sub-text">Item</span></div>
-                                                    <div class="nk-tb-col tb-col-sm qty"><span class="sub-text">Qty</span></div>
-                                                    <div class="nk-tb-col tb-col-sm price"><span class="sub-text">Unit Price</span></div>
-                                                    <div class="nk-tb-col total"><span class="sub-text">Total</span></div>
+                                                    <div class="nk-tb-col tb-col-xxl item"><span>Item</span></div>
+                                                    <div class="nk-tb-col tb-col-sm quantity"><span>Qty</span></div>
+                                                    <div class="nk-tb-col tb-col-sm price"><span class="fw-semibold">Unit Price</span></div>
+                                                    <div class="nk-tb-col total"><span class="fw-semibold">Total</span></div>
                                                     <div class="nk-tb-col nk-tb-col-tools text-right"></div>
                                                 </div><!-- .nk-tb-item -->
                                                 
@@ -92,7 +92,7 @@
                                                 
                                             </div><!-- .nk-tb-list -->
                                         </div><!-- .card-inner -->
-                                        <div class="card-inner">
+                                        <div class="card-inner bg-primary">
                                             
                                             <div class="card text-white bg-primary">
                                                 <!--<div class="card-header">Header</div>-->

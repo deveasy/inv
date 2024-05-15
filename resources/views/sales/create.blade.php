@@ -57,71 +57,129 @@
                                 </div><!-- .card -->
                             </div><!-- .col -->
                             <div class="col-xxl-6">
-                                <div class="card card-bordered">
+                                <div class="card card-bordered card-stretch">
                                     <div class="card-inner-group">
-                                        <div class="card-inner position-relative card-tools-toggle">
+                                        <div class="card-inner">
                                             <div class="card-title-group">
-                                                <div class="card-tools">
-                                                    <div class="form-inline flex-nowrap gx-3">
-                                                        <div class="form-wrap w-150px">
-                                                            <select class="form-select form-select-sm" data-search="off" data-placeholder="Bulk Action">
-                                                                <option value="">Bulk Action</option>
-                                                                <option value="edit">Edit</option>
-                                                                <option value="delete">Move To Trash</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="btn-wrap">
-                                                            <span class="d-none d-md-block"><button class="btn btn-dim btn-outline-light disabled">Apply</button></span>
-                                                            <span class="d-md-none"><button class="btn btn-dim btn-outline-light btn-icon disabled"><em class="icon ni ni-arrow-right"></em></button></span>
-                                                        </div>
-                                                    </div><!-- .form-inline -->
-                                                </div><!-- .card-tools -->
+                                                <div class="card-title">
+                                                    <h5 class="title">All Invoice</h5>
+                                                </div>
+                                                <div class="card-tools mr-n1">
+                                                    <ul class="btn-toolbar">
+                                                        <li>
+                                                            <a href="#" class="btn btn-icon search-toggle toggle-search" data-target="search"><em class="icon ni ni-search"></em></a>
+                                                        </li><!-- li -->
+                                                        <li class="btn-toolbar-sep"></li><!-- li -->
+                                                        <li>
+                                                            <div class="dropdown">
+                                                                <a href="#" class="btn btn-trigger btn-icon dropdown-toggle" data-toggle="dropdown">
+                                                                    <em class="icon ni ni-setting"></em>
+                                                                </a>
+                                                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-xs">
+                                                                    <ul class="link-check">
+                                                                        <li><span>Show</span></li>
+                                                                        <li class="active"><a href="#">10</a></li>
+                                                                        <li><a href="#">20</a></li>
+                                                                        <li><a href="#">50</a></li>
+                                                                    </ul>
+                                                                    <ul class="link-check">
+                                                                        <li><span>Order</span></li>
+                                                                        <li class="active"><a href="#">DESC</a></li>
+                                                                        <li><a href="#">ASC</a></li>
+                                                                    </ul>
+                                                                    <ul class="link-check">
+                                                                        <li><span>Density</span></li>
+                                                                        <li class="active"><a href="#">Regular</a></li>
+                                                                        <li><a href="#">Compact</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div><!-- .dropdown -->
+                                                        </li><!-- li -->
+                                                    </ul><!-- .btn-toolbar -->
+                                                </div><!-- card-tools -->
+                                                <div class="card-search search-wrap" data-search="search">
+                                                    <div class="search-content">
+                                                        <a href="#" class="search-back btn btn-icon toggle-search" data-target="search"><em class="icon ni ni-arrow-left"></em></a>
+                                                        <input type="text" class="form-control form-control-sm border-transparent form-focus-none" placeholder="Quick search by order id">
+                                                        <button class="search-submit btn btn-icon"><em class="icon ni ni-search"></em></button>
+                                                    </div>
+                                                </div><!-- card-search -->
                                             </div><!-- .card-title-group -->
                                         </div><!-- .card-inner -->
                                         <div class="card-inner p-0">
-                                            <div class="nk-tb-list nk-tb-ulist" id="cartItems">
-                                                <div class="nk-tb-item nk-tb-head">
-                                                    <div class="nk-tb-col tb-col-xxl item"><span>Item</span></div>
-                                                    <div class="nk-tb-col tb-col-sm quantity"><span>Qty</span></div>
-                                                    <div class="nk-tb-col tb-col-sm price"><span class="fw-semibold">Unit Price</span></div>
-                                                    <div class="nk-tb-col total"><span class="fw-semibold">Total</span></div>
-                                                    <div class="nk-tb-col nk-tb-col-tools text-right"></div>
-                                                </div><!-- .nk-tb-item -->
-                                                
-                                                <!-- Cart Items go here -->
-                                                
-                                            </div><!-- .nk-tb-list -->
-                                        </div><!-- .card-inner -->
-                                        <div class="card-inner bg-primary">
-                                            
-                                            <div class="card text-white bg-primary">
-                                                <!--<div class="card-header">Header</div>-->
-                                                <div class="card-inner">
-                                                    <div class="nk-block-between-md g-3">
-                                                        <!--<div class="g">
-                                                            <ul class="pagination justify-content-center justify-content-md-start">
-                                                                <li class="page-item"><a class="page-link" href="#">Prev</a></li>
-                                                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                                <li class="page-item"><span class="page-link"><em class="icon ni ni-more-h"></em></span></li>
-                                                                <li class="page-item"><a class="page-link" href="#">6</a></li>
-                                                                <li class="page-item"><a class="page-link" href="#">7</a></li>
-                                                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                                                            </ul><!-- .pagination 
-                                                        </div>-->
-                                                        <div class="g">
-                                                            <div class="form-control-wrap">
-                                                                <div class="input-group">
-                                                                    <input type="text" class="form-control form-control-lg" placeholder="Total Amount" readonly>
-                                                                    <div class="input-group-append">
-                                                                        <button class="btn btn-secondary"><em class="icon ni ni-navigate-fill"></em> <span>Pay Now</span></button>
-                                                                    </div>
-                                                                </div>
+                                            <table class="table table-orders">
+                                                <thead class="tb-odr-head">
+                                                    <tr class="tb-odr-item">
+                                                        <th class="tb-odr-info">
+                                                            <span class="tb-odr-id">Item</span>
+                                                        </th>
+                                                        <th class="tb-odr-info">
+                                                            <span class="tb-odr-date d-none d-md-inline-block">Quantity</span>
+                                                        </th>
+                                                        <th class="tb-odr-info">
+                                                            <span class="tb-odr-date">Price</span>
+                                                        </th>
+                                                        <th class="tb-odr-amount">
+                                                            <span class="tb-odr-status d-none d-md-inline-block">Total</span>
+                                                        </th>
+                                                        <th class="tb-odr-action">&nbsp;</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="tb-odr-body" id="cartItems">
+                                                    <tr class="tb-odr-item">
+                                                        <td class="tb-odr-info">
+                                                            <span class="tb-odr-id"><a href="html/invoice-details.html">#fasdfadfasdfsadfasfda</a></span>
+                                                        </td>
+                                                        <td class="tb-odr-info">
+                                                            <span class="tb-odr-date">4</span>
+                                                        </td>
+                                                        <td class="tb-odr-info">
+                                                            <span class="tb-odr-date">
+                                                                <span class="amount">$2300.00</span>
+                                                            </span>
+                                                        </td>
+                                                        <td class="tb-odr-amount">
+                                                            <span class="tb-odr-total">
+                                                                <span class="amount">$2300.00</span>
+                                                            </span>
+                                                        </td>
+                                                        <td class="tb-odr-action">
+                                                            <div class="tb-odr-btns d-none d-sm-inline">
+                                                                <a href="#" class="btn btn-icon btn-white btn-dim btn-sm btn-primary delete-item"><em class="icon ni ni-cross-sm "></em></a>
                                                             </div>
-                                                        </div><!-- .pagination-goto -->
-                                                    </div><!-- .nk-block-between -->
-                                                </div>
-                                            </div><!-- .payment card -->
+                                                        </td>
+                                                    </tr><!-- .tb-odr-item -->
+                                                    <tr class="tb-odr-item">
+                                                        <td class="tb-odr-info"></td>
+                                                        <td class="tb-odr-info"></td>
+                                                        <td class="tb-odr-info">
+                                                            <span class="fw-bold">Subtotal</span>
+                                                        </td>
+                                                        <td class="tb-odr-amount">
+                                                            <span class="tb-odr-total">
+                                                                <span class="amount">$2300.00</span>
+                                                            </span>
+                                                        </td>
+                                                        <td class="tb-odr-action">
+                                                            <div class="tb-odr-btns d-none d-sm-inline">
+                                                                <a href="#" class="btn btn-icon btn-white btn-dim btn-sm btn-primary delete-item"><em class="icon ni ni-cross-sm "></em></a>
+                                                            </div>
+                                                        </td>
+                                                    </tr><!-- .tb-odr-item -->
+                                                </tbody>
+                                            </table>
+                                        </div><!-- .card-inner -->
+                                        <div class="card-inner">
+                                            <div class="justify-content-center justify-content-md-start">
+                                                <a href="#" class="btn btn-dim btn-outline-primary">Add discount</a>
+                                                <a href="#" class="btn btn-dim btn-outline-primary">Add note</a>
+                                                <a href="#" class="btn btn-dim btn-outline-primary">Add Fee</a>
+                                            </div><!-- .action buttons -->
+                                            <div class="justify-content-center justify-content-md-end">
+                                                <a href="#" class="btn btn-dim btn-outline-primary">Add discount</a>
+                                                <a href="#" class="btn btn-dim btn-outline-primary">Add note</a>
+                                                <a href="#" class="btn btn-dim btn-outline-primary">Add Fee</a>
+                                            </div><!-- .action buttons -->
                                         </div><!-- .card-inner -->
                                     </div><!-- .card-inner-group -->
                                 </div><!-- .card -->

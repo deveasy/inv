@@ -72,8 +72,6 @@ $(document).ready(function() {
 $(document).ready(function(){
     var selectedRow = null;
     var productId = null;
-    var productName = null;
-    var productPrice = null;
 
     //hilight the initially selected row
     $('#productList tr:first').addClass('bg-light');
@@ -136,41 +134,29 @@ function renderCart(){
 
     Object.values(cartItems).forEach(item => {
         var itemHtml = `
-            <div class="nk-tb-item" id="${item.product.id}">
-                <div class="nk-tb-col tb-col-xxl">
-                    <span>${item.product.product_name}</span>
-                </div>
-                <div class="nk-tb-col tb-col-sm">
-                    <div class="form-control-wrap number-spinner-wrap">
-                        <button class="btn btn-icon btn-outline-light number-spinner-btn number-minus" data-number="minus"><em class="icon ni ni-minus"></em></button>
-                        <input type="number" class="form-control number-spinner" value="${item.quantity}">
-                        <button class="btn btn-icon btn-outline-light number-spinner-btn number-plus" data-number="plus"><em class="icon ni ni-plus"></em></button>
+            <tr class="tb-odr-item" id="${item.product.id}">
+                <td class="tb-odr-info">
+                    <span class="tb-odr-id"><a href="html/invoice-details.html">${item.product.product_name}</a></span>
+                </td>
+                <td class="tb-odr-info">
+                    <span class="tb-odr-date">${item.quantity}</span>
+                </td>
+                <td class="tb-odr-info">
+                    <span class="tb-odr-date">
+                        <span class="amount">${item.product.price}</span>
+                    </span>
+                </td>
+                <td class="tb-odr-amount">
+                    <span class="tb-odr-total">
+                        <span class="amount">${parseFloat(parseFloat(item.product.price) * parseInt(item.quantity)).toFixed(2)}</span>
+                    </span>
+                </td>
+                <td class="tb-odr-action">
+                    <div class="tb-odr-btns d-none d-sm-inline">
+                        <a href="#" class="btn btn-icon btn-white btn-dim btn-sm btn-primary delete-item"><em class="icon ni ni-cross-sm "></em></a>
                     </div>
-                </div>
-                <div class="nk-tb-col tb-col-sm">
-                    <span>${item.product.price}</span>
-                </div>
-                <div class="nk-tb-col">
-                    <div>
-                        <input type="text" class="form-control-plaintext total" value="${parseFloat(parseFloat(item.product.price) * parseInt(item.quantity))}">
-                    </div>
-                </div>
-                <div class="nk-tb-col nk-tb-col-tools">
-                    <ul class="nk-tb-actions gx-1">
-                        <li>
-                            <div class="drodown">
-                                <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <ul class="link-list-opt no-bdr">
-                                        <li><a href="#" data-toggle="modal" data-target="#editCategory"><em class="icon ni ni-edit-fill"></em><span>Edit Category</span></a></li>
-                                        <li><a href="#"><em class="icon ni ni-trash-fill"></em><span>Trash</span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div><!-- .nk-tb-item -->
+                </td>
+            </tr><!-- .tb-odr-item -->
         `;
         cartList.append(itemHtml);
     });
@@ -195,6 +181,13 @@ function removeFromCart(cartItemId) {
         }
     });
 }
+
+$(document).ready(function(){
+    $('.tb-odr-btns a').on('click', function(e){
+        e.preventDefault();
+        $(this).closest('tr').remove();
+    });
+});
 
 function calculateTotalPrice() {
     let totalPrice = 0;

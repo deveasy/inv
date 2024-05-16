@@ -128,7 +128,7 @@
                                                 <tbody class="tb-odr-body" id="cartItems">
                                                     <tr class="tb-odr-item">
                                                         <td class="tb-odr-info">
-                                                            <span class="tb-odr-id"><a href="html/invoice-details.html">#fasdfadfasdfsadfasfda</a></span>
+                                                            <span class="tb-odr-id"><a href="#">#fasdfadfasdfsadfasfda</a></span>
                                                         </td>
                                                         <td class="tb-odr-info">
                                                             <span class="tb-odr-date">4</span>
@@ -170,16 +170,27 @@
                                             </table>
                                         </div><!-- .card-inner -->
                                         <div class="card-inner">
-                                            <div class="justify-content-center justify-content-md-start">
-                                                <a href="#" class="btn btn-dim btn-outline-primary">Add discount</a>
-                                                <a href="#" class="btn btn-dim btn-outline-primary">Add note</a>
-                                                <a href="#" class="btn btn-dim btn-outline-primary">Add Fee</a>
-                                            </div><!-- .action buttons -->
-                                            <div class="justify-content-center justify-content-md-end">
-                                                <a href="#" class="btn btn-dim btn-outline-primary">Add discount</a>
-                                                <a href="#" class="btn btn-dim btn-outline-primary">Add note</a>
-                                                <a href="#" class="btn btn-dim btn-outline-primary">Add Fee</a>
-                                            </div><!-- .action buttons -->
+                                            <div class="nk-block-between-md g-3">
+                                                <div class="g">
+                                                    <div class="justify-content-center justify-content-md-start">
+                                                        <a href="#" class="btn btn-dim btn-outline-primary"><em class="icon ni ni-plus-sm"></em> <span>Discount</span></a>
+                                                        <a href="#" class="btn btn-dim btn-outline-primary"><em class="icon ni ni-plus-sm"></em> <span>Note</span></a>
+                                                        <a href="#" class="btn btn-dim btn-outline-primary"><em class="icon ni ni-plus-sm"></em> <span>Fee</span></a>
+                                                    </div><!-- .additional buttons -->
+                                                </div>
+                                                <div class="g">
+                                                    <div class="d-flex justify-content-center justify-content-md-start gx-3">
+                                                        <div class="form-control-wrap">
+                                                            <div class="input-group">
+                                                                <input type="text" class="form-control" id="totalSale">
+                                                                <div class="input-group-append">
+                                                                    <button class="btn btn-outline-primary btn-dim"><em class="icon ni ni-send"></em><span>Make Payment</span></button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- .payment field -->
+                                                </div>
+                                            </div>
                                         </div><!-- .card-inner -->
                                     </div><!-- .card-inner-group -->
                                 </div><!-- .card -->

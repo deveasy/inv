@@ -136,7 +136,7 @@ function renderCart(){
         var itemHtml = `
             <tr class="tb-odr-item" id="${item.product.id}">
                 <td class="tb-odr-info">
-                    <span class="tb-odr-id"><a href="html/invoice-details.html">${item.product.product_name}</a></span>
+                    <span class="tb-odr-id"><a href="#">${item.product.product_name}</a></span>
                 </td>
                 <td class="tb-odr-info">
                     <span class="tb-odr-date">${item.quantity}</span>

@@ -14,7 +14,7 @@
                     </div><!-- .nk-block-head -->
                     <div class="nk-block">
                         <div class="row g-gs">
-                            <div class="col-xxl-6">
+                            <div class="col-xxl-5">
                                 <div class="card card-bordered h-100">
                                     <div class="card-inner">
                                         <div class="row g-3 align-center">
@@ -56,7 +56,7 @@
                                     </div><!-- .card-inner -->
                                 </div><!-- .card -->
                             </div><!-- .col -->
-                            <div class="col-xxl-6">
+                            <div class="col-xxl-7">
                                 <div class="card card-bordered card-stretch">
                                     <div class="card-inner-group">
                                         <div class="card-inner">
@@ -153,6 +153,40 @@
                                                         <td class="tb-odr-info"></td>
                                                         <td class="tb-odr-info"></td>
                                                         <td class="tb-odr-info">
+                                                            <span class="fw-bold">Discount</span>
+                                                        </td>
+                                                        <td class="tb-odr-amount">
+                                                            <span class="tb-odr-total">
+                                                                <span class="amount">0.00</span>
+                                                            </span>
+                                                        </td>
+                                                        <td class="tb-odr-action">
+                                                            <div class="tb-odr-btns d-none d-sm-inline">
+                                                                <a href="#" class="btn btn-icon btn-white btn-dim btn-sm btn-primary delete-item"><em class="icon ni ni-cross-sm "></em></a>
+                                                            </div>
+                                                        </td>
+                                                    </tr><!-- .tb-odr-item -->
+                                                    <tr class="tb-odr-item">
+                                                        <td class="tb-odr-info"></td>
+                                                        <td class="tb-odr-info"></td>
+                                                        <td class="tb-odr-info">
+                                                            <span class="fw-bold">Tax</span>
+                                                        </td>
+                                                        <td class="tb-odr-amount">
+                                                            <span class="tb-odr-total">
+                                                                <span class="amount">0.00</span>
+                                                            </span>
+                                                        </td>
+                                                        <td class="tb-odr-action">
+                                                            <div class="tb-odr-btns d-none d-sm-inline">
+                                                                <a href="#" class="btn btn-icon btn-white btn-dim btn-sm btn-primary delete-item"><em class="icon ni ni-cross-sm "></em></a>
+                                                            </div>
+                                                        </td>
+                                                    </tr><!-- .tb-odr-item -->
+                                                    <tr class="tb-odr-item">
+                                                        <td class="tb-odr-info"></td>
+                                                        <td class="tb-odr-info"></td>
+                                                        <td class="tb-odr-info">
                                                             <span class="fw-bold">Subtotal</span>
                                                         </td>
                                                         <td class="tb-odr-amount">
@@ -173,7 +207,7 @@
                                             <div class="nk-block-between-md g-3">
                                                 <div class="g">
                                                     <div class="justify-content-center justify-content-md-start">
-                                                        <a href="#" class="btn btn-dim btn-outline-primary"><em class="icon ni ni-plus-sm"></em> <span>Discount</span></a>
+                                                        <a href="#" data-toggle="modal" data-target="#addDiscount" class="btn btn-dim btn-outline-primary"><em class="icon ni ni-plus-sm"></em> <span>Discount</span></a>
                                                         <a href="#" class="btn btn-dim btn-outline-primary"><em class="icon ni ni-plus-sm"></em> <span>Note</span></a>
                                                         <a href="#" class="btn btn-dim btn-outline-primary"><em class="icon ni ni-plus-sm"></em> <span>Fee</span></a>
                                                     </div><!-- .additional buttons -->
@@ -203,5 +237,46 @@
     </div>
 @endsection
 @section('scripts')
+<div class="modal fade" id="addDiscount">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <a href="#" class="close" data-dismiss="modal" aria-label="Close">
+                    <em class="icon ni ni-cross-sm"></em>
+                </a>
+                <div class="modal-body modal-body-md">
+                    <h5 class="modal-title">Add Discount</h5>
+                    <form action="#" class="mt-2">
+                        <div class="row g-gs">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="add-amount">Amount</label>
+                                    <div class="form-control-wrap">
+                                        <input type="text" class="form-control" id="add-amount" placeholder="GHS Amount">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="add-status">Status</label>
+                                    <div class="form-control-wrap ">
+                                        <select class="form-select" id="add-status">
+                                            <option value="paid">Paid</option>
+                                            <option value="due">Due</option>
+                                            <option value="canceled">Canceled</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <button type="submit" data-dismiss="modal" class="btn btn-primary" id="addDiscount">Add Discount</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 <script src="./js/inv.js"></script>
 @endsection

@@ -14,6 +14,7 @@ function searchProducts(searchTerm) {
         success: function(response) {
             // Update the product list display with search results
             displaySearchProducts(response);
+            products = {};
             products = response;
         },
         error: function(xhr, status, error) {
@@ -26,7 +27,7 @@ function getProducts(){
     //send an AJAX request to get products
     $.ajax({
         type: "GET",
-        url: "/products",
+        url: "/sales/products",
         data: {
             _token: '{{ csrf_token() }}'
         },
@@ -107,6 +108,7 @@ function addToCart(productId) {
       cartItems[productId] = { product: products.find(p => p.id == productId), quantity: 1 };
     }
     renderCart();
+    calculateTotalPrice();
   }
 
 function addToCartAjax(productId) {
@@ -130,25 +132,25 @@ function addToCartAjax(productId) {
 
 function renderCart(){
     var cartList = $('#cartItems');
-    cartList.empty();
+    // cartList.empty();
 
     Object.values(cartItems).forEach(item => {
         var itemHtml = `
-            <tr class="tb-odr-item" id="${item.product.id}">
+            <tr class="tb-odr-item cart-item" id="${item.product.id}">
                 <td class="tb-odr-info">
                     <span class="tb-odr-id"><a href="#">${item.product.product_name}</a></span>
                 </td>
                 <td class="tb-odr-info">
-                    <span class="tb-odr-date">${item.quantity}</span>
+                    <span class="tb-odr-date quantity">${item.quantity}</span>
                 </td>
                 <td class="tb-odr-info">
                     <span class="tb-odr-date">
-                        <span class="amount">${item.product.price}</span>
+                        <span class="amount price">${item.product.price}</span>
                     </span>
                 </td>
                 <td class="tb-odr-amount">
                     <span class="tb-odr-total">
-                        <span class="amount">${parseFloat(parseFloat(item.product.price) * parseInt(item.quantity)).toFixed(2)}</span>
+                        <span class="amount total">${parseFloat(parseFloat(item.product.price) * parseInt(item.quantity)).toFixed(2)}</span>
                     </span>
                 </td>
                 <td class="tb-odr-action">
@@ -158,7 +160,7 @@ function renderCart(){
                 </td>
             </tr><!-- .tb-odr-item -->
         `;
-        cartList.append(itemHtml);
+        cartList.prepend(itemHtml);
     });
     
 }
@@ -192,11 +194,13 @@ $(document).ready(function(){
 function calculateTotalPrice() {
     let totalPrice = 0;
     $('.cart-item').each(function() {
-        const price = parseFloat($(this).find('.price').text().replace('$', ''));
-        const quantity = parseInt($(this).find('.quantity').text());
-        totalPrice += price * quantity;
+        // const price = parseFloat($(this).find('.price').text().replace('$', ''));
+        // const quantity = parseInt($(this).find('.quantity').text());
+        const total = parseFloat($(this).find('.total').text());
+        // totalPrice += price * quantity;
+        totalPrice += total;
     });
-    $('#totalPrice').text('$' + totalPrice.toFixed(2));
+    $('#totalSale').val('GHS' + totalPrice.toFixed(2));
 }
 
 // Call the calculateTotalPrice function whenever the page loads or the cart is modified

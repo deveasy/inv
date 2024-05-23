@@ -50,4 +50,9 @@ class SalesController extends Controller
 
         return response()->json($products);
     }
+
+    public function getProducts(){
+        $products = Products::all();
+        return response()->json($products);
+    }
 }

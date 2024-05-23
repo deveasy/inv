@@ -127,29 +127,6 @@
                                                 </thead>
                                                 <tbody class="tb-odr-body" id="cartItems">
                                                     <tr class="tb-odr-item">
-                                                        <td class="tb-odr-info">
-                                                            <span class="tb-odr-id"><a href="#">#fasdfadfasdfsadfasfda</a></span>
-                                                        </td>
-                                                        <td class="tb-odr-info">
-                                                            <span class="tb-odr-date">4</span>
-                                                        </td>
-                                                        <td class="tb-odr-info">
-                                                            <span class="tb-odr-date">
-                                                                <span class="amount">$2300.00</span>
-                                                            </span>
-                                                        </td>
-                                                        <td class="tb-odr-amount">
-                                                            <span class="tb-odr-total">
-                                                                <span class="amount">$2300.00</span>
-                                                            </span>
-                                                        </td>
-                                                        <td class="tb-odr-action">
-                                                            <div class="tb-odr-btns d-none d-sm-inline">
-                                                                <a href="#" class="btn btn-icon btn-white btn-dim btn-sm btn-primary delete-item"><em class="icon ni ni-cross-sm "></em></a>
-                                                            </div>
-                                                        </td>
-                                                    </tr><!-- .tb-odr-item -->
-                                                    <tr class="tb-odr-item">
                                                         <td class="tb-odr-info"></td>
                                                         <td class="tb-odr-info"></td>
                                                         <td class="tb-odr-info">
@@ -165,7 +142,7 @@
                                                                 <a href="#" class="btn btn-icon btn-white btn-dim btn-sm btn-primary delete-item"><em class="icon ni ni-cross-sm "></em></a>
                                                             </div>
                                                         </td>
-                                                    </tr><!-- .tb-odr-item -->
+                                                    </tr><!-- .tr-discount -->
                                                     <tr class="tb-odr-item">
                                                         <td class="tb-odr-info"></td>
                                                         <td class="tb-odr-info"></td>
@@ -182,7 +159,7 @@
                                                                 <a href="#" class="btn btn-icon btn-white btn-dim btn-sm btn-primary delete-item"><em class="icon ni ni-cross-sm "></em></a>
                                                             </div>
                                                         </td>
-                                                    </tr><!-- .tb-odr-item -->
+                                                    </tr><!-- .tr-tax -->
                                                     <tr class="tb-odr-item">
                                                         <td class="tb-odr-info"></td>
                                                         <td class="tb-odr-info"></td>
@@ -199,7 +176,7 @@
                                                                 <a href="#" class="btn btn-icon btn-white btn-dim btn-sm btn-primary delete-item"><em class="icon ni ni-cross-sm "></em></a>
                                                             </div>
                                                         </td>
-                                                    </tr><!-- .tb-odr-item -->
+                                                    </tr><!-- .tr-subtotal -->
                                                 </tbody>
                                             </table>
                                         </div><!-- .card-inner -->
@@ -215,7 +192,7 @@
                                                 <div class="g">
                                                     <div class="d-flex justify-content-center justify-content-md-start gx-3">
                                                         <div class="form-control-wrap">
-                                                            <div class="input-group">
+                                                            <div class="input-group input-group-lg">
                                                                 <input type="text" class="form-control" id="totalSale">
                                                                 <div class="input-group-append">
                                                                     <button class="btn btn-outline-primary btn-dim"><em class="icon ni ni-send"></em><span>Make Payment</span></button>

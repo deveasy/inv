@@ -40,6 +40,7 @@ Route::middleware('auth')->group(function () {
         Route::delete('/sales/{sale}', 'destroy')->name('sales.destroy');
         Route::delete('/sales', 'returns')->name('sales.returns');
         Route::get('/sales/search', 'search')->name('sales.search');
+        Route::get('/sales/products', 'getProducts')->name('sales.products');
     });
     
     Route::controller(ProductsController::class)->group(function() {

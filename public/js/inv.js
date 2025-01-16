@@ -162,7 +162,6 @@ function renderCart(){
         `;
         cartList.prepend(itemHtml);
     });
-    
 }
 
 function removeFromCart(cartItemId) {
